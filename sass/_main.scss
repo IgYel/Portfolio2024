@@ -1,0 +1,544 @@
+main{
+  #darkMode{
+    position: absolute;
+    height: 6%;
+    width: 3%;
+    right: 0%;
+    bottom: 2%;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+.MainPage {
+  height: 108vh;
+  width: 100%;
+}
+
+.horizontalScroller {
+  padding: 2rem 0 1rem 0;
+  height: 100vh;
+  position: relative;
+}
+
+.horizontalScroller__backtext {
+  .PortfolioText{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 18%;
+    left: -2%;
+
+    font-size: 16vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Asap';
+    letter-spacing: -70px;
+    font-weight: 400;
+    color: var(--color);
+  }
+}
+
+.horizontalScroller__scroll {
+  height: 100%;
+  position: relative;
+
+  .horizontalScroller__images {
+    padding: 2% 0 7% 0;
+    margin-left: 15%;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    .horizontalScroller__item {
+      width: 15%;
+      height: 100%;
+      margin-right: 10%;
+      background-color: rgba(87, 88, 88, 0.3);
+      border-radius: 20% 10% 20% 10%;
+      padding: 1%;
+      color: var(--color);
+      backdrop-filter: blur(20px);
+      &:nth-child(2){
+        border-radius: 10% 20% 10% 20%;
+        margin-top: 2%;
+      }
+    }
+  }
+}
+
+.contact {
+  height: 100vh;
+  width: 100%;
+}
+
+.EndLine{
+  width: 100%;
+  height: 55px;
+  background-color: var(--Red);
+  position: relative;
+  top: -100px;
+  left: 0;
+  .LineUp{
+    width: 90%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--color);
+    position: absolute;
+    top: -2px;
+    left: 3%;
+  }
+  .LineBot{
+    width: 90%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--color);
+    position: absolute;
+    bottom: -2px;
+    right: 3%;
+  }
+  .MainEndLineText{
+    text-wrap: nowrap;
+    width: 100%;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 150;
+    color: var(--colorR); 
+  }
+}
+.AboutEndLine{
+  width: 100%;
+  height: 55px;
+  position: relative;
+  .AboutLineUp{
+    width: 90%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--color);
+    position: absolute;
+    top: -2px;
+    right: 3%;
+  }
+  .AboutLineBot{
+    width: 90%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--color);
+    position: absolute;
+    bottom: -2px;
+    left: 3%;
+  }
+  .AboutLineText{
+    text-wrap: nowrap;
+    width: 100%;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 250;
+    text-transform: uppercase;
+    color: var(--color);
+    font-family: "Asap";
+    word-spacing: 10px;
+    margin-left: -1000px;
+    .cursivetext{
+      font-family: "Spirax";
+      word-spacing: 10px;
+      letter-spacing: 3px;
+    }
+    animation: MoveLine 6s linear infinite;
+  }
+}
+
+
+.MainPage{
+  height: 115vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.SocialMedia{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: 15px;
+  .Social{
+    display: flex;
+    padding: 10px 15px;
+    justify-content: space-between;
+    width: fit-content;
+    #instagram{
+      height: 40px;
+      &:hover{
+        #i{
+          transform: rotateX(90deg) translateZ(-3.5px);
+          transition: ease 1s;
+        }
+        #n{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.05s;
+        }
+        #s{
+          transform: rotateX(90deg) translateZ(-3.5px);
+          transition: ease 1s 0.1s;
+        }
+        #t{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.15s;
+        }
+        #a{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.2s;
+        }
+        #g{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.25s;
+        }
+        #r{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.3s;
+        }
+        #a1{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.35s;
+        }
+        #m{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.4s;
+        }
+      }
+      #i{
+        transition: ease 1s 0.4s;
+      }
+      #n{
+        transition: ease 1s 0.35s;
+      }
+      #s{
+        transition: ease 1s 0.3s;
+      }
+      #t{
+        transition: ease 1s 0.25s;
+      }
+      #a{
+        transition: ease 1s 0.2s;
+      }
+      #g{
+        transition: ease 1s 0.15s;
+      }
+      #r{
+        transition: ease 1s 0.1s;
+      }
+      #a1{
+        transition: ease 1s 0.05s;
+      }
+      #m{
+        transition: ease 1s;
+      }
+      div{
+        background-color: var(--bg);
+        position: relative;
+        perspective: 20000px;
+        transform-style: preserve-3d;
+        .normalfont{
+          transform: rotateX(0deg) translateZ(20px);
+        }
+        .cursivefont{
+          font-family: "Spirax";
+          font-weight: 600;
+          transform: rotateX(-90deg) translateZ(20px);
+        }
+      }
+    }
+    #github{
+      height: 40px;
+      &:hover{
+        #g1{
+          transform: rotateX(90deg) translateZ(-3.5px);
+          transition: ease 1s;
+        }
+        #i1{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.05s;
+        }
+        #t1{
+          transform: rotateX(90deg) translateZ(-3.5px);
+          transition: ease 1s 0.1s;
+        }
+        #h{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.15s;
+        }
+        #u{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.2s;
+        }
+        #b{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.25s;
+        }
+      }
+      #g1{
+        transition: ease 1s 0.25s;
+      }
+      #i1{
+        transition: ease 1s 0.2s;
+      }
+      #t1{
+        transition: ease 1s 0.15s;
+      }
+      #h{
+        transition: ease 1s 0.1s;
+      }
+      #u{
+        transition: ease 1s 0.05s;
+      }
+      #b{
+        transition: ease 1s;
+      }
+      div{
+        background-color: var(--bg);
+        position: relative;
+        perspective: 20000px;
+        transform-style: preserve-3d;
+        .normalfont{
+          transform: rotateX(0deg) translateZ(20px);
+        }
+        .cursivefont{
+          font-family: "Spirax";
+          font-weight: 600;
+          transform: rotateX(-90deg) translateZ(20px);
+        }
+      }
+    }
+    #facebook{
+      height: 40px;
+      &:hover{
+        #f{
+          transform: rotateX(90deg) translateZ(-3.5px);
+          transition: ease 1s;
+        }
+        #a2{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.05s;
+        }
+        #c{
+          transform: rotateX(90deg) translateZ(-3.5px);
+          transition: ease 1s 0.1s;
+        }
+        #e{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.15s;
+        }
+        #b1{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.2s;
+        }
+        #o{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.25s;
+        }
+        #o1{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.3s;
+        }
+        #k{
+          transform: rotateX(90deg) translateZ(-2.5px);
+          transition: ease 1s 0.35s;
+        }
+      }
+      #f{
+        transition: ease 1s 0.35s;
+      }
+      #a2{
+        transition: ease 1s 0.3s;
+      }
+      #c{
+        transition: ease 1s 0.25s;
+      }
+      #e{
+        transition: ease 1s 0.2s;
+      }
+      #b1{
+        transition: ease 1s 0.15s;
+      }
+      #o{
+        transition: ease 1s 0.1s;
+      }
+      #o1{
+        transition: ease 1s 0.05s;
+      }
+      #k{
+        transition: ease 1s;
+      }
+      div{
+        background-color: var(--bg);
+        position: relative;
+        perspective: 20000px;
+        transform-style: preserve-3d;
+        .normalfont{
+          transform: rotateX(0deg) translateZ(20px);
+        }
+        .cursivefont{
+          font-family: "Spirax";
+          font-weight: 600;
+          transform: rotateX(-90deg) translateZ(20px);
+        }
+      }
+    }
+
+
+    div{
+      margin-right: 25px;
+      display: flex;
+      span{
+        position: absolute;
+        font-weight: 500;
+        margin: 0;
+        font-size: 30px;
+      }
+    }
+  }
+}
+.AboutMeSection{
+  width: 100vw; 
+  height: 280vh;
+  .AboutBackgroundText{
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    #FixedText{
+      width: 100%;
+      font-size: 15vw;
+      text-align: center;
+      font-family: 'Sansation';
+      position: absolute;
+      z-index: 3;
+    }
+    .AboutTextCard{
+      width: 40vw;
+      height: fit-content;
+      font-size: 1.5vw;
+      color: #fafafa;
+      background-color:var(--bgTransparent);
+      backdrop-filter: blur(15px);
+      text-shadow: 0 0 10px #fafafa, 0 0 20px #fafafa;
+      transition: 2s;
+    }
+    #WhereFromText{
+      border-radius: 7rem 7rem 2rem 2rem;
+      padding: 10vw 1vw 3rem 1vw;
+      position: absolute;
+      z-index: 4;
+      top: 10rem;
+      left: 5vh;
+    }
+    #MyLifeText{
+      border-radius: 7rem 7rem 2rem 2rem;
+      position: absolute;
+      padding: 10vw 1vw 3vw 1vw;
+      z-index: 4;
+      right: 5rem;
+      top: 50vh;
+    }
+    #MyAimsText{
+      border-radius: 2rem 2rem 7rem 7rem;
+      position: absolute;
+      padding: 3vw 1vw 10vw 1vw;
+      z-index: 4;
+      left: 8rem;
+      bottom: 60vh;
+    }
+    #MyBenefitsText{
+      border-radius: 2rem 2rem 7rem 7rem;
+      position: absolute;
+      padding: 3vw 1vw 10vw 1vw;
+      z-index: 4;
+      right: 12rem;
+      bottom: 20vh;
+    }
+  }
+}
+
+.EndLineContact{
+  width: 100%;
+  height: 55px;
+  position: relative;
+  left: 0;
+  .LineUpContact{
+    top: -2px;
+    left: 3%;
+    z-index: 6;
+  }
+  .LineBotContact{
+    bottom: -6px;
+    right: 3%;
+    z-index: 20;
+  }
+  .ContainerLine{
+    position: relative;
+    perspective: 20000px;
+    transform-style: preserve-3d;
+    animation: RotateLine 4s ease infinite;
+    z-index: 5;
+    div{
+      background-color: var(--bg);
+    }
+    #TextEng{
+      text-wrap: nowrap;
+      width: 100%;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 250;
+      color: var(--color);
+      position: absolute;
+      transform: rotateX(0deg) translateZ(20px);
+      z-index: 4;
+    }
+    #TextCz{
+      text-wrap: nowrap;
+      width: 100%;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 250;
+      color: var(--color);
+      position: absolute;
+      transform: rotateX(90deg) translateZ(20px);
+      z-index: 5;
+    }
+    #TextEng2{
+      height: fit-content;
+      text-wrap: nowrap;
+      width: 100%;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 250;
+      color: var(--color);
+      position: absolute;
+      transform: rotateX(180deg) translateZ(20px);
+      z-index: 5;
+    }
+    #TextCz2{
+      text-wrap: nowrap;
+      width: 100%;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 250;
+      color: var(--color);
+      position: absolute;
+      transform: rotateX(270deg) translateZ(20px);
+      z-index: 5;
+    }
+  }
+  .LineUpContact,
+  .LineBotContact {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--color);
+    position: absolute;
+  }
+}

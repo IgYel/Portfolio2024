@@ -1,0 +1,19 @@
+body.light {
+  --bg: var(--light-bg);
+  --bgHeader: #ecececa8;
+  --bgR: var(--dark-bg);
+  --color: var(--light-color);
+  --colorR: var(--dark-color);
+  --active: var(--light-active);
+  --bgTransparent: var(--dark-bgTransparent);
+}
+
+body.dark {
+  --bg: var(--dark-bg);
+  --bgHeader: #1a1a1a98;
+  --bgR: #eaeaeb;
+  --color: #eaeaeb;
+  --colorR: var(--light-color);
+  --active: var(--dark-active);
+  --bgTransparent: var(--light-bgTransparent);
+}

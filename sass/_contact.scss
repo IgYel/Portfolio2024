@@ -1,0 +1,301 @@
+.ContactMeSection {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg);
+  padding: 5vh 3%;
+  .SVGContainer {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      .ButtonToStart {
+        transition: 0.3s ease-in-out;
+        transform: translateY(1vw);
+      }
+    }
+    .ContactsLogoText {
+      position: relative;
+      height: 60%;
+      width: 97.5%;
+    }
+    .ButtonToStart {
+      position: absolute;
+      top: 35%;
+      right: -18%;
+      width: 40%;
+      height: 40%;
+      transition: 0.3s ease-in-out;
+      path {
+        transition: d 0.3s ease-in-out;
+      }
+    }
+  }
+  .Credits {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: fit-content;
+    span {
+      padding: 1vw;
+      font-size: 2vw;
+      width: fit-content;
+      margin-bottom: -1vw;
+      letter-spacing: -0.3rem;
+      padding-left: 0;
+    }
+  }
+  .email {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5vw 1vw;
+    border: 0.2vw solid;
+    border-radius: 50vw;
+    font-size: 2vw;
+    letter-spacing: 0.4vw;
+    color: var(color);
+    border-color: var(color);
+  }
+  .SocialContainer {
+    height: 28vh;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    .SocialContact {
+      display: flex;
+      padding: 10px 15px;
+      justify-content: space-between;
+      width: fit-content;
+      margin-left: -0.8vw;
+      #instagram {
+        height: 40px;
+        &:hover {
+          #i {
+            transform: rotateX(90deg) translateZ(-3.5px);
+            transition: ease 1s;
+          }
+          #n {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.05s;
+          }
+          #s {
+            transform: rotateX(90deg) translateZ(-3.5px);
+            transition: ease 1s 0.1s;
+          }
+          #t {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.15s;
+          }
+          #a {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.2s;
+          }
+          #g {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.25s;
+          }
+          #r {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.3s;
+          }
+          #a1 {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.35s;
+          }
+          #m {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.4s;
+          }
+        }
+        #i {
+          transition: ease 1s 0.4s;
+        }
+        #n {
+          transition: ease 1s 0.35s;
+        }
+        #s {
+          transition: ease 1s 0.3s;
+        }
+        #t {
+          transition: ease 1s 0.25s;
+        }
+        #a {
+          transition: ease 1s 0.2s;
+        }
+        #g {
+          transition: ease 1s 0.15s;
+        }
+        #r {
+          transition: ease 1s 0.1s;
+        }
+        #a1 {
+          transition: ease 1s 0.05s;
+        }
+        #m {
+          transition: ease 1s;
+        }
+        div {
+          background-color: var(--bg);
+          position: relative;
+          perspective: 20000px;
+          transform-style: preserve-3d;
+          .normalfont {
+            transform: rotateX(0deg) translateZ(20px);
+          }
+          .cursivefont {
+            font-family: "Spirax";
+            font-weight: 600;
+            transform: rotateX(-90deg) translateZ(20px);
+          }
+        }
+      }
+      #github {
+        height: 40px;
+        &:hover {
+          #g1 {
+            transform: rotateX(90deg) translateZ(-3.5px);
+            transition: ease 1s;
+          }
+          #i1 {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.05s;
+          }
+          #t1 {
+            transform: rotateX(90deg) translateZ(-3.5px);
+            transition: ease 1s 0.1s;
+          }
+          #h {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.15s;
+          }
+          #u {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.2s;
+          }
+          #b {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.25s;
+          }
+        }
+        #g1 {
+          transition: ease 1s 0.25s;
+        }
+        #i1 {
+          transition: ease 1s 0.2s;
+        }
+        #t1 {
+          transition: ease 1s 0.15s;
+        }
+        #h {
+          transition: ease 1s 0.1s;
+        }
+        #u {
+          transition: ease 1s 0.05s;
+        }
+        #b {
+          transition: ease 1s;
+        }
+        div {
+          background-color: var(--bg);
+          position: relative;
+          perspective: 20000px;
+          transform-style: preserve-3d;
+          .normalfont {
+            transform: rotateX(0deg) translateZ(20px);
+          }
+          .cursivefont {
+            font-family: "Spirax";
+            font-weight: 600;
+            transform: rotateX(-90deg) translateZ(20px);
+          }
+        }
+      }
+      #facebook {
+        height: 40px;
+        &:hover {
+          #f {
+            transform: rotateX(90deg) translateZ(-3.5px);
+            transition: ease 1s;
+          }
+          #a2 {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.05s;
+          }
+          #c {
+            transform: rotateX(90deg) translateZ(-3.5px);
+            transition: ease 1s 0.1s;
+          }
+          #e {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.15s;
+          }
+          #b1 {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.2s;
+          }
+          #o {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.25s;
+          }
+          #o1 {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.3s;
+          }
+          #k {
+            transform: rotateX(90deg) translateZ(-2.5px);
+            transition: ease 1s 0.35s;
+          }
+        }
+        #f {
+          transition: ease 1s 0.35s;
+        }
+        #a2 {
+          transition: ease 1s 0.3s;
+        }
+        #c {
+          transition: ease 1s 0.25s;
+        }
+        #e {
+          transition: ease 1s 0.2s;
+        }
+        #b1 {
+          transition: ease 1s 0.15s;
+        }
+        #o {
+          transition: ease 1s 0.1s;
+        }
+        #o1 {
+          transition: ease 1s 0.05s;
+        }
+        #k {
+          transition: ease 1s;
+        }
+        div {
+          background-color: var(--bg);
+          position: relative;
+          perspective: 20000px;
+          transform-style: preserve-3d;
+          .normalfont {
+            transform: rotateX(0deg) translateZ(20px);
+          }
+          .cursivefont {
+            font-family: "Spirax";
+            font-weight: 600;
+            transform: rotateX(-90deg) translateZ(20px);
+          }
+        }
+      }
+
+      div {
+        margin-right: 25px;
+        display: flex;
+        span {
+          position: absolute;
+          font-weight: 500;
+          margin: 0;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@keyframes RotateLine {
+  0%{
+    transform: rotateX(-270deg) translateZ(-25px);
+  }
+  50%{
+    transform: rotateX(-360deg) translateZ(0px);
+  }
+  100%{
+    transform: rotateX(-450deg) translateZ(25px);
+  }
+}
+@keyframes MoveLine {
+  from{
+  }
+  to{
+    transform: translate(492px);
+  }
+}
+
+@keyframes Income {
+    from{
+    }
+    to{
+        stroke-dashoffset: 0px;
+    }
+}
+@keyframes IncomeRed {
+    from{
+        stroke: #ff6565;
+    }
+    to{
+        stroke-dashoffset: 0px;
+    }
+}
+
+@keyframes Front {
+    0%{
+        transform: translateX(60px);
+    }
+    40%{
+        stroke-dashoffset: 0px;
+    }
+    85%{
+        transform: translateX(60px);
+    }
+    100%{
+        transform: translateX(0px);
+        stroke-dashoffset: 0px;
+    }
+}
+
+@keyframes End {
+    0%{
+        transform: translateX(-60px);
+    }
+    40%{
+        stroke-dashoffset: 0px;
+    }
+    85%{
+        transform: translateX(-60px);
+    }
+    100%{
+        transform: translateX(1px);
+        stroke-dashoffset: 0px;
+    }
+}

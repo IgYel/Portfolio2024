@@ -1,0 +1,40 @@
+header{
+    transition: .25s;
+    z-index: 99;
+    width: 100%;
+    position: fixed;
+    background-color: var(--bgHeader);
+    backdrop-filter: blur(15px);
+    a{
+        text-decoration: none;
+    }
+    .Container{
+        z-index: 3;
+        position: relative;
+        height: 52px;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5%;
+        .headerText{
+            color: var(--color);
+            transition: ease-out 0.1s;
+            margin-top: 19px;
+            @include TextWrap;
+            &:hover{
+                margin-top: 4px;
+                transition: ease-out 0.17s;
+                color: var(--Red);
+            }
+        }
+    }
+    .HeaderLine{
+        z-index: 3;
+        position: relative;
+        height: 2.5px;
+        width: 95%;
+        margin: 0 2.5% 0 2.5%;
+        background-color: var(--bgR);
+        border-radius: 5px;
+    }
+}

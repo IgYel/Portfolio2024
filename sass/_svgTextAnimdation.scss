@@ -1,0 +1,286 @@
+.Text{
+    height: 60%;
+    width: 50%;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 12%;
+        :nth-child(1){
+            stroke-dashoffset: 80px;
+            stroke-dasharray: 80px;
+            animation: Income 0.8s ease-in-out 0.2s forwards;
+        }
+        :nth-child(2){
+            stroke-dashoffset: 80px;
+            stroke-dasharray: 80px;
+            animation: Income 1s ease-in-out 0.2s forwards;
+        }
+        :nth-child(3){
+            stroke-dashoffset: 140px;
+            stroke-dasharray: 140px;
+            animation: Income 0.8s ease-in-out 0.55s forwards;
+        }
+        :nth-child(4){
+            stroke-dashoffset: 200px;
+            stroke-dasharray: 200px;
+            animation: Income 1s ease-in-out 0.6s forwards;
+        }
+        :nth-child(37){
+            stroke-dashoffset: 200px;
+            stroke-dasharray: 200px;
+            animation: Income 1s ease-in-out 0.9s forwards;
+        }
+        :nth-child(5){
+            stroke-dashoffset: 290px;
+            stroke-dasharray: 290px;
+            animation: Income 1.23s ease-in-out .7s forwards;
+        }
+        :nth-child(6){
+            stroke-dashoffset: 110px;
+            stroke-dasharray: 110px;
+            animation: IncomeRed 1.23s ease-in-out .76s forwards;
+        }
+        :nth-child(7){
+            stroke-dashoffset: 80px;
+            stroke-dasharray: 80px;
+            animation: Income 1.23s ease-in-out 2s forwards;
+        }
+        :nth-child(8){
+            stroke-dashoffset: 200px;
+            stroke-dasharray: 200px;
+            animation: Income 1s ease-in-out 1.4s forwards;
+        }
+        :nth-child(38){
+            stroke-dashoffset: 60px;
+            stroke-dasharray: 60px;
+            animation: Income 1.23s ease-in-out 2s forwards;
+        }
+        :nth-child(9){
+            stroke-dashoffset: 350px;
+            stroke-dasharray: 350px;
+            animation: Income 0.8s ease-in-out 1.47s forwards;
+        }
+        :nth-child(10){
+            stroke-dashoffset: 160px;
+            stroke-dasharray:  160px;
+            animation: IncomeRed 1.23s ease-in-out 1.8s forwards;
+        }
+        :nth-child(11){
+            stroke-dashoffset: 130px;
+            stroke-dasharray: 130px;
+            animation: Income 1s ease-in-out 1.57s forwards;
+        }
+        :nth-child(12){
+            stroke-dashoffset: 280px;
+            stroke-dasharray: 280px;
+            animation: Income 1s ease-in-out 1.75s forwards;
+        }
+        :nth-child(13){
+            stroke-dashoffset: 150px;
+            stroke-dasharray: 150px;
+            animation: Income 1s ease-in-out 2.1s forwards;
+        }
+        :nth-child(39){
+            stroke-dashoffset: 200px;
+            stroke-dasharray: 200px;
+            animation: Income 1s ease-in-out 2.5s forwards;
+        }
+        :nth-child(14){
+            stroke-dashoffset: 350px;
+            stroke-dasharray: 350px;
+            animation: IncomeRed 1.23s ease-in-out 2.2s forwards;
+        }
+        :nth-child(15){
+            stroke-dashoffset: 220px;
+            stroke-dasharray: 220px;
+            animation: Income 1s ease-in-out 2.0s forwards;
+        }
+        :nth-child(16){ //F
+            stroke-dashoffset: 170px;
+            stroke-dasharray: 170px;
+            animation: Front 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(17){
+            stroke-dashoffset: 120px;
+            stroke-dasharray: 120px;
+            animation: Front 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(18){
+            stroke-dashoffset: 90px;
+            stroke-dasharray: 90px;
+            animation: Front 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(19){
+            stroke-dashoffset: 290px;
+            stroke-dasharray: 290px;
+            animation: Front 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(20){
+            stroke-dashoffset: 200px;
+            stroke-dasharray: 200px;
+            animation: Front 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(21){
+            stroke-dashoffset: 170px;
+            stroke-dasharray: 170px;
+            animation: Front 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(22){
+            stroke-dashoffset: 70px;
+            stroke-dasharray: 70px;
+            animation: Front 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(23){ // line -
+            stroke-dashoffset: 80px;
+            stroke-dasharray: 80px;
+            animation: IncomeRed 0.8s ease-in-out 5.8s forwards;
+        }
+        :nth-child(36){ // line -
+            stroke-dashoffset: 80px;
+            stroke-dasharray: 80px;
+            animation: IncomeRed 0.8s ease-in-out 5.8s forwards;
+        }
+        :nth-child(24){
+            stroke-dashoffset: 350px;
+            stroke-dasharray: 350px;
+            animation: End 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(25){
+            stroke-dashoffset: 200px;
+            stroke-dasharray: 200px;
+            animation: End 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(26){
+            stroke-dashoffset: 300px;
+            stroke-dasharray: 300px;
+            animation: End 3.4s ease-in-out 2.8s forwards;
+        }
+        :nth-child(27){ // D
+            stroke-dashoffset: 540px;
+            stroke-dasharray: 540px;
+            animation: IncomeRed 1s ease-in-out 3.7s forwards;
+        }
+        :nth-child(28){
+            stroke-dashoffset: 380px;
+            stroke-dasharray: 380px;
+            animation: Income 1s ease-in-out 4.05s forwards;
+        }
+        :nth-child(29){
+            stroke-dashoffset: 240px;
+            stroke-dasharray: 240px;
+            animation: IncomeRed 0.8s ease-in-out 3.93s forwards;
+        }
+        :nth-child(30){
+            stroke-dashoffset: 380px;
+            stroke-dasharray: 380px;
+            animation: Income 1.23s ease-in-out 4.15s forwards;
+        }
+        :nth-child(31){
+            stroke-dashoffset: 180px;
+            stroke-dasharray: 180px;
+            animation: Income 1s ease-in-out 4.1s forwards;
+        }
+        :nth-child(32){
+            stroke-dashoffset: 340px;
+            stroke-dasharray: 340px;
+            animation: Income 1s ease-in-out 4.45s forwards;
+        }
+        :nth-child(33){
+            stroke-dashoffset: 320px;
+            stroke-dasharray: 320px;
+            animation: IncomeRed 1.3s ease-in-out 4.35s forwards;
+        }
+        :nth-child(34){
+            stroke-dashoffset: 380px;
+            stroke-dasharray: 380px;
+            animation: Income 1.53s ease-in-out 4.55s forwards;
+        }
+        :nth-child(35){
+            stroke-dashoffset: 120px;
+            stroke-dasharray: 120px;
+            animation: Income 1.8s ease-in-out 4.42s forwards;
+        }
+        :nth-child(40){
+            stroke-dashoffset: 80px;
+            stroke-dasharray: 80px;
+            animation: Income 1.8s ease-in-out 4.7s forwards;
+        }
+        
+    }
+.ContactsLogoText{
+    :nth-child(1){
+        stroke-dashoffset: 130px;
+        stroke-dasharray: 130px;
+    }
+    :nth-child(2){
+        stroke-dashoffset: 200px;
+        stroke-dasharray: 200px;
+    }
+    :nth-child(3){
+        stroke-dashoffset: 130px;
+        stroke-dasharray: 130px;
+    }
+    :nth-child(4){
+        stroke-dashoffset: 250px;
+        stroke-dasharray: 250px;
+    }
+    :nth-child(5){
+        stroke-dashoffset: 350px;
+        stroke-dasharray: 350px;
+    }
+    :nth-child(6){
+        stroke-dashoffset: 480px;
+        stroke-dasharray: 480px;
+    }
+    :nth-child(7){
+        stroke-dashoffset: 185px;
+        stroke-dasharray: 185px;
+    }
+    :nth-child(8){
+        stroke-dashoffset: 130px;
+        stroke-dasharray: 130px;
+    }
+    :nth-child(9){
+        stroke-dashoffset: 450px;
+        stroke-dasharray: 450px;
+    }
+    :nth-child(10){
+        stroke-dashoffset: 400px;
+        stroke-dasharray: 400px;
+    }
+    :nth-child(11){
+        stroke-dashoffset: 500px;
+        stroke-dasharray: 500px;
+    }
+    :nth-child(12){
+        stroke-dashoffset: 290px;
+        stroke-dasharray: 290px;
+    }
+    :nth-child(13){
+        stroke-dashoffset: 450px;
+        stroke-dasharray: 450px;
+    }
+    :nth-child(14){
+        stroke-dashoffset: 400px;
+        stroke-dasharray: 400px;
+    }
+    :nth-child(15){
+        stroke-dashoffset: 450px;
+        stroke-dasharray: 450px;
+    }
+    :nth-child(16){
+        stroke-dashoffset: 450px;
+        stroke-dasharray: 450px;
+    }
+    :nth-child(17){
+        stroke-dashoffset: 300px;
+        stroke-dasharray: 300px;
+    }
+    :nth-child(18){
+        stroke-dashoffset: 500px;
+        stroke-dasharray: 500px;
+    }
+    :nth-child(19){
+        stroke-dashoffset: 400px;
+        stroke-dasharray: 400px;
+    }
+}

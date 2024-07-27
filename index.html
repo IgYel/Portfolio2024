@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IgorJelysev Portfolio 2024</title>
+    <link rel="stylesheet" href="./styles/style.min.css" />
+    <script defer async src="./js/anime.js"></script>
+    <script defer async src="./js/themeswitch.js"></script>
+    <script defer async src="./js/scroll.js"></script>
+    <script defer async src="./js/contactPage.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="Container">
+        <a href="#firstScrollItem">
+          <div class="headerText">portfolio</div>
+        </a>
+        <a href="">
+          <div class="headerText">about</div>
+        </a>
+        <a href="">
+          <div class="headerText">contact</div>
+        </a>
+      </div>
+      <div class="HeaderLine"></div>
+    </header>
+    <main>
+      <svg
+        onclick="Switch()"
+        id="darkMode"
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="BackofIcon"
+          d="M64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32C0 14.3269 14.3269 0 32 0C49.6731 0 64 14.3269 64 32Z"
+          fill="#1A1A1A"
+        />
+        <path
+          class="sun"
+          d="M41.25 29.5C41.25 35.9893 35.9893 41.25 29.5 41.25C23.0107 41.25 17.75 35.9893 17.75 29.5C17.75 23.0107 23.0107 17.75 29.5 17.75C35.9893 17.75 41.25 23.0107 41.25 29.5Z"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="31.1782"
+          y="16.0714"
+          width="4"
+          height="10"
+          rx="1.67857"
+          transform="rotate(-180 31.1782 16.0714)"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="27.8213"
+          y="42.9286"
+          width="4"
+          height="10"
+          rx="1.67857"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="42.9287"
+          y="31.1786"
+          width="4"
+          height="10"
+          rx="1.67857"
+          transform="rotate(-90 42.9287 31.1786)"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="16.0713"
+          y="27.8214"
+          width="4"
+          height="10"
+          rx="1.67857"
+          transform="rotate(90 16.0713 27.8214)"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="40.1826"
+          y="21.1915"
+          width="4"
+          height="10"
+          rx="1.67857"
+          transform="rotate(-135 40.1826 21.1915)"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="18.8179"
+          y="37.8085"
+          width="4"
+          height="10"
+          rx="1.67857"
+          transform="rotate(45 18.8179 37.8085)"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="37.8086"
+          y="40.1824"
+          width="4"
+          height="10"
+          rx="1.67857"
+          transform="rotate(-45 37.8086 40.1824)"
+          fill="#ececec"
+        />
+        <rect
+          class="ray"
+          x="21.1914"
+          y="18.8176"
+          width="4"
+          height="10"
+          rx="1.67857"
+          transform="rotate(135 21.1914 18.8176)"
+          fill="#ececec"
+        />
+      </svg>
+      <!-- ! -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+
+      <div class="MainPage">
+        <svg
+          class="Text"
+          width="976"
+          height="511"
+          viewBox="0 0 976 511"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M13.5757 17.5H84.4999" stroke="#1A1A1A" stroke-width="18" />
+          <path d="M13.5 139.5H83" stroke="#1A1A1A" stroke-width="18" />
+          <path d="M50.5 146.5V10" stroke="#1A1A1A" stroke-width="20" />
+          <path d="M90 148V0" stroke="#1A1A1A" stroke-width="20" />
+          <path
+            d="M227.628 140C167.5 140 167 50 227.5 50C288 50 289 140 227.628 140Z"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path d="M285 148.5V42.5" stroke="#1A1A1A" stroke-width="20" />
+          <path
+            d="M285 99C287.333 82.8333 300.1 50.5 332.5 50.5"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M353 13.5L406 97.5L459.5 13.5"
+            stroke="#1A1A1A"
+            stroke-width="20"
+            stroke-linejoin="bevel"
+          />
+          <path
+            d="M443.008 96.2475H529.508C529.508 35.7476 442.044 39.7563 443.008 93.2475C443.99 147.748 502.008 150.748 528.508 128.248"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path d="M540.5 148.5V0" stroke="#1A1A1A" stroke-width="20" />
+          <path
+            d="M545.5 46.5L592 149M592 149L637 46.5M592 149C592 149 573 194.5 534 172.5"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M619.5 130C640 141 695.5 151.5 695.5 118.5C695.5 85.5 628.361 110.5 629.5 69.5C629.833 57.5 644.8 37.7 698 58.5"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path d="M705 148V0" stroke="#1A1A1A" stroke-width="20" />
+          <path
+            d="M797 94.9999H883.5C883.5 34.5 796.036 38.5086 797 91.9999C797.982 146.5 856 149.5 882.5 127"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M877.5 46L918 139.5H926L967.5 46"
+            stroke="#1A1A1A"
+            stroke-width="18"
+          />
+          <path
+            d="M10 308V242.5M99.5 177H10V242.5M10 242.5H92"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path d="M98.5 308V202" stroke="#1A1A1A" stroke-width="20" />
+          <path
+            d="M98.5 258.5C100.833 242.333 113.6 210 146 210"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M179.8 300C119.672 300 119.172 210 179.672 210C240.172 210 241.172 300 179.8 300Z"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M236 308.5V253.5M236 253.5C236 201.5 317.267 194.5 318 248C318.4 277.2 318 308 318 308M236 253.5V202"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M341.5 178.5L342 275.5C342 290.5 352 310.5 386.5 295.5"
+            stroke="#1A1A1A"
+            stroke-width="19"
+          />
+          <path d="M314.5 210H381.711" stroke="#1A1A1A" stroke-width="16" />
+          <path
+            d="M446 260.5H473.5"
+            stroke="#1A1A1A"
+            stroke-width="18"
+            stroke-linecap="round"
+          />
+          <path
+            d="M505.008 254.023H592C592 192.463 504.039 196.542 505.008 250.97C505.995 306.425 564.343 309.478 590.994 286.584"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M604 308.5V253.5M604 253.5C604 201.5 685.267 194.5 686 248C686.4 277.2 686 308 686 308M604 253.5V202"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M786 160V258M786 258C786 312 695 314.5 695 258C695 199 786 198.5 786 258ZM786 258V308"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M111 458.5V322H100H167C258 322 263 458.5 167 458.5H100H111Z"
+            stroke="#1A1A1A"
+            stroke-width="22"
+          />
+          <path
+            d="M246 405.023H341C341 340 246 342 246 402C246 465 311 468 338 442"
+            stroke="#1A1A1A"
+            stroke-width="22"
+          />
+          <path
+            d="M338 354.5L382.5 458H391L437 354.5"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M431 406.396H526C526 341.373 431 343.373 431 403.373C431 466.373 496 469.373 523 443.373"
+            stroke="#1A1A1A"
+            stroke-width="22"
+          />
+          <path d="M544 467.5V304.297" stroke="#1A1A1A" stroke-width="22" />
+          <path
+            d="M562 408C562 342.5 662 340.5 662 408C662 475.5 562 476.5 562 408Z"
+            stroke="#1A1A1A"
+            stroke-width="22"
+          />
+          <path
+            d="M679 510.5L679 412M679 412C679 344.5 779 341.5 779 412C779 474.5 679 471.5 679 412ZM679 412L679 350.5"
+            stroke="#1A1A1A"
+            stroke-width="22"
+          />
+          <path
+            d="M786 408.396H881C881 343.373 786 345.373 786 405.373C786 468.373 851 471.373 878 445.373"
+            stroke="#1A1A1A"
+            stroke-width="22"
+          />
+          <path d="M898 467.5V350.5" stroke="#1A1A1A" stroke-width="22" />
+          <path
+            d="M445.5 260.5L418 260.5"
+            stroke="#1A1A1A"
+            stroke-width="18"
+            stroke-linecap="round"
+          />
+          <path
+            d="M90 96.5C90 38 171.5 33 171.5 87V148"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path d="M406 97.5V148.5" stroke="#1A1A1A" stroke-width="20" />
+          <path
+            d="M705 96C705 37.5 787.5 33 787.5 87V148"
+            stroke="#1A1A1A"
+            stroke-width="20"
+          />
+          <path
+            d="M898 407.5C900.333 391.333 913.5 359.5 950.5 359.5"
+            stroke="#1A1A1A"
+            stroke-width="22"
+          />
+        </svg>
+        <div class="SocialMedia">
+          <div class="Social">
+            <div id="instagram">
+              <div id="i">
+                <span class="normalfont">i</span>
+                <span class="cursivefont">i</span>
+              </div>
+              <div id="n">
+                <span class="normalfont">n</span>
+                <span class="cursivefont">n</span>
+              </div>
+              <div id="s">
+                <span class="normalfont">s</span>
+                <span class="cursivefont">s</span>
+              </div>
+              <div id="t">
+                <span class="normalfont">t</span>
+                <span class="cursivefont">t</span>
+              </div>
+              <div id="a">
+                <span class="normalfont">a</span>
+                <span class="cursivefont">a</span>
+              </div>
+              <div id="g">
+                <span class="normalfont">g</span>
+                <span class="cursivefont">g</span>
+              </div>
+              <div id="r">
+                <span class="normalfont">r</span>
+                <span class="cursivefont">r</span>
+              </div>
+              <div id="a1">
+                <span class="normalfont">a</span>
+                <span class="cursivefont">a</span>
+              </div>
+              <div id="m">
+                <span class="normalfont">m</span>
+                <span class="cursivefont">m</span>
+              </div>
+            </div>
+            <div id="github">
+              <div id="g1">
+                <span class="normalfont">g</span>
+                <span class="cursivefont">g</span>
+              </div>
+              <div id="i1">
+                <span class="normalfont">i</span>
+                <span class="cursivefont">i</span>
+              </div>
+              <div id="t1">
+                <span class="normalfont">t</span>
+                <span class="cursivefont">t</span>
+              </div>
+              <div id="h">
+                <span class="normalfont">h</span>
+                <span class="cursivefont">h</span>
+              </div>
+              <div id="u">
+                <span class="normalfont">u</span>
+                <span class="cursivefont">u</span>
+              </div>
+              <div id="b">
+                <span class="normalfont">b</span>
+                <span class="cursivefont">b</span>
+              </div>
+            </div>
+            <div id="facebook">
+              <div id="f">
+                <span class="normalfont">f</span>
+                <span class="cursivefont">f</span>
+              </div>
+              <div id="a2">
+                <span class="normalfont">a</span>
+                <span class="cursivefont">a</span>
+              </div>
+              <div id="c">
+                <span class="normalfont">c</span>
+                <span class="cursivefont">c</span>
+              </div>
+              <div id="e">
+                <span class="normalfont">e</span>
+                <span class="cursivefont">e</span>
+              </div>
+              <div id="b1">
+                <span class="normalfont">b</span>
+                <span class="cursivefont">b</span>
+              </div>
+              <div id="o">
+                <span class="normalfont">o</span>
+                <span class="cursivefont">o</span>
+              </div>
+              <div id="o1">
+                <span class="normalfont">o</span>
+                <span class="cursivefont">o</span>
+              </div>
+              <div id="k">
+                <span class="normalfont">k</span>
+                <span class="cursivefont">k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="horizontalScroller">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-8 col-xl-6">
+              <div class="horizontalScroller__backtext">
+                <div class="PortfolioText">Portfolio</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="EndLine">
+          <div class="LineUp"></div>
+          <div class="MainEndLineText">
+            Ihor Yelyshev 2024 portfolio | Igor Jelyšev 2024 portfolio | Ihor
+            Yelyshev 2024 portfolio | Igor Jelyšev 2024 portfolio | Ihor
+            Yelyshev 2024 portfolio | Igor Jelyšev 2024 portfolio | Ihor
+            Yelyshev 2024 portfolio | Igor Jelyšev 2024 portfolio | Ihor
+            Yelyshev 2024 portfolio | Igor Jelyšev 2024 portfolio | Ihor
+            Yelyshev 2024 portfolio | Igor Jelyšev 2024 portfolio
+          </div>
+          <div class="LineBot"></div>
+        </div>
+        <div class="horizontalScroller__scroll">
+          <div class="horizontalScroller__images" id="horizontal-scroll">
+            <div id="firstScrollItem" class="horizontalScroller__item">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ea
+              officia quaerat, dicta labore ducimus?
+            </div>
+            <div id="SecondScrollItem" class="horizontalScroller__item">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed
+              repellendus fugit.
+            </div>
+            <div id="ThirdScrollItem" class="horizontalScroller__item">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos reiciendis dicta molestiae iste aspernatur fuga quis
+              earum vitae, quaerat saepe, beatae minima laudantium eaque
+              officiis!
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="AboutEndLine">
+        <div class="AboutLineUp"></div>
+        <div class="AboutLineText">
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+          About me
+          <span class="cursivetext"> Ihor Yelyshev </span>
+        </div>
+        <div class="AboutLineBot"></div>
+      </div>
+
+      <section class="AboutMeSection">
+        <div class="AboutBackgroundText">
+          <div id="FixedText">
+            ABOUT ME <br />
+            ŽIVOTOPIS
+          </div>
+          <div class="AboutBackgroundTextLine"></div>
+
+          <div id="WhereFromText" class="AboutTextCard">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
+            natus cumque earum iusto quibusdam incidunt laboriosam. Suscipit
+            doloremque a facilis dolorum dolore obcaecati.
+          </div>
+          <div id="MyLifeText" class="AboutTextCard">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
+            veritatis cupiditate modi ea quaerat eligendi similique, odio dolor
+            laborum sunt minus unde, maxime tenetur! Earum, quaerat? Incidunt,
+            unde? Dolor magnam natus repellendus totam cum rerum atque, quidem
+            non accusamus consectetur.
+          </div>
+          <div id="MyAimsText" class="AboutTextCard">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+            sed maxime hic quod ratione vel. Et consectetur eveniet ducimus
+            inventore?
+          </div>
+          <div id="MyBenefitsText" class="AboutTextCard">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+            doloremque facilis quia.
+          </div>
+        </div>
+      </section>
+
+      <div class="EndLineContact">
+        <div class="LineUpContact"></div>
+        <div class="ContainerLine">
+          <div id="TextEng">
+            Contact me Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me
+            Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me Ihor Yelyshev
+            | Contact me Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me
+            Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me Ihor Yelyshev
+            |
+          </div>
+          <div id="TextCz">
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+          </div>
+          <div id="TextEng2">
+            Contact me Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me
+            Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me Ihor Yelyshev
+            | Contact me Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me
+            Ihor Yelyshev | Contact me Ihor Yelyshev | Contact me Ihor Yelyshev
+            |
+          </div>
+          <div id="TextCz2">
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+            Kontaktujte mě Igor Jelyšev | Kontaktujte mě Igor Jelyšev |
+          </div>
+        </div>
+        <div class="LineBotContact"></div>
+      </div>
+
+      <section id="Contacts" class="ContactMeSection">
+        <div class="Credits">
+          <span class="shuffle" data-new-text="Kód:"> Code:</span>
+          <span class="shuffle" data-new-text="Navrhl:"> Designed by:</span>
+        </div>
+        <div class="SVGContainer">
+          <svg
+            class="ContactsLogoText"
+            width="1804"
+            height="314"
+            viewBox="0 0 1804 314"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 30H123" stroke="#D7D7D7" stroke-width="30" />
+            <path d="M62 30V220" stroke="#D7D7D7" stroke-width="30" />
+            <path d="M0 234H123.5" stroke="#D7D7D7" stroke-width="30" />
+            <path d="M138 2V249" stroke="#D7D7D7" stroke-width="32" />
+            <path
+              d="M269.5 233V141.5C269.5 45.9998 138 84.0001 138 147.5"
+              stroke="#D7D7D7"
+              stroke-width="32"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M373.5 85C274.5 85 273.501 235.5 373.5 235.5C473.5 235.5 472.501 85 373.5 85Z"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M478.5 248.5V159.25V70"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M543 85.5C523 85.5 477 99.5 477 166"
+              stroke="#D7D7D7"
+              stroke-width="32"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M615.5 16V118C615.5 192 775.593 196 776.5 118C777.3 49.2 776.5 16 776.5 16"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M776 30.5V168C776 274.5 690 291 621 240.5"
+              stroke="#D7D7D7"
+              stroke-width="32"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M951.791 202.85C907.788 251.85 827.582 239.35 809.788 174.35M809.788 174.35C785.288 84.8503 929.788 44.3504 948.788 144.85L809.788 174.35Z"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M982.5 1.5C982.9 5.9 982.666 132 982.5 194.5C982.5 211 988.5 241 1044 232.5"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M1041.5 70.5V173C1041.5 242.5 1172 239 1172 165.5C1172 100.7 1172 77.6667 1172 70.5"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M1172.5 134.5C1172.5 153.077 1172.5 188 1172.5 215C1172.5 292 1131.32 305.265 1079 293.782C1063.49 287.835 1047.67 277.751 1033 266.5"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M1187 213.5C1215.5 234.5 1309.5 252.001 1309.5 199.5C1309.5 137 1203.5 182.749 1203.5 122C1203.5 68.5 1287.5 75.4999 1319 104"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M1470 250V139.5C1470 47.5001 1337.5 85 1337.5 139.5C1337.5 215.1 1337.5 197.667 1337.5 179.5"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path d="M1337.5 1V249.5" stroke="#D7D7D7" stroke-width="32" />
+            <path
+              d="M1643.5 203C1599.5 252 1519.29 239.5 1501.5 174.5M1501.5 174.5C1477 84.9999 1621.5 44.5 1640.5 145L1501.5 174.5Z"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+            <path
+              d="M1635.5 69.5L1708 233H1717.5L1789 70"
+              stroke="#D7D7D7"
+              stroke-width="32"
+            />
+          </svg>
+
+          <svg
+            class="ButtonToStart"
+            width="65"
+            height="114"
+            viewBox="0 0 65 114"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M56 105L9 56.5L54.5 9.5"
+              stroke="#1a1a1a"
+              stroke-width="18"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="email">send me email</div>
+        <div class="SocialContainer">
+          <div class="SocialContact">
+            <div id="instagram">
+              <div id="i">
+                <span class="normalfont">i</span>
+                <span class="cursivefont">i</span>
+              </div>
+              <div id="n">
+                <span class="normalfont">n</span>
+                <span class="cursivefont">n</span>
+              </div>
+              <div id="s">
+                <span class="normalfont">s</span>
+                <span class="cursivefont">s</span>
+              </div>
+              <div id="t">
+                <span class="normalfont">t</span>
+                <span class="cursivefont">t</span>
+              </div>
+              <div id="a">
+                <span class="normalfont">a</span>
+                <span class="cursivefont">a</span>
+              </div>
+              <div id="g">
+                <span class="normalfont">g</span>
+                <span class="cursivefont">g</span>
+              </div>
+              <div id="r">
+                <span class="normalfont">r</span>
+                <span class="cursivefont">r</span>
+              </div>
+              <div id="a1">
+                <span class="normalfont">a</span>
+                <span class="cursivefont">a</span>
+              </div>
+              <div id="m">
+                <span class="normalfont">m</span>
+                <span class="cursivefont">m</span>
+              </div>
+            </div>
+            <div id="github">
+              <div id="g1">
+                <span class="normalfont">g</span>
+                <span class="cursivefont">g</span>
+              </div>
+              <div id="i1">
+                <span class="normalfont">i</span>
+                <span class="cursivefont">i</span>
+              </div>
+              <div id="t1">
+                <span class="normalfont">t</span>
+                <span class="cursivefont">t</span>
+              </div>
+              <div id="h">
+                <span class="normalfont">h</span>
+                <span class="cursivefont">h</span>
+              </div>
+              <div id="u">
+                <span class="normalfont">u</span>
+                <span class="cursivefont">u</span>
+              </div>
+              <div id="b">
+                <span class="normalfont">b</span>
+                <span class="cursivefont">b</span>
+              </div>
+            </div>
+            <div id="facebook">
+              <div id="f">
+                <span class="normalfont">f</span>
+                <span class="cursivefont">f</span>
+              </div>
+              <div id="a2">
+                <span class="normalfont">a</span>
+                <span class="cursivefont">a</span>
+              </div>
+              <div id="c">
+                <span class="normalfont">c</span>
+                <span class="cursivefont">c</span>
+              </div>
+              <div id="e">
+                <span class="normalfont">e</span>
+                <span class="cursivefont">e</span>
+              </div>
+              <div id="b1">
+                <span class="normalfont">b</span>
+                <span class="cursivefont">b</span>
+              </div>
+              <div id="o">
+                <span class="normalfont">o</span>
+                <span class="cursivefont">o</span>
+              </div>
+              <div id="o1">
+                <span class="normalfont">o</span>
+                <span class="cursivefont">o</span>
+              </div>
+              <div id="k">
+                <span class="normalfont">k</span>
+                <span class="cursivefont">k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ! -->
+    </main>
+  </body>
+</html>
