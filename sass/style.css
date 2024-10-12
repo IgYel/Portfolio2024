@@ -1,0 +1,1593 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spirax&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Maname&family=Whisper&display=swap");
+@font-face {
+  font-family: "Sansation";
+  src: url("../font/Sansation_Regular.ttf"), url("../font/Sansation_Bold_Italic.ttf"), url("../font/Sansation_Italic.ttf"), url("../font/Sansation_Light.ttf"), url("../font/Sansation_Light_Italic.ttf"), url("../font/Sansation_Bold.ttf");
+}
+@keyframes RotateLine {
+  0% {
+    transform: rotateX(-270deg) translateZ(-25px);
+  }
+  50% {
+    transform: rotateX(-360deg) translateZ(0px);
+  }
+  100% {
+    transform: rotateX(-450deg) translateZ(25px);
+  }
+}
+@keyframes MoveLine {
+  to {
+    transform: translate(492px);
+  }
+}
+@keyframes Income {
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes IncomeRed {
+  from {
+    stroke: #ff6565;
+  }
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes Front {
+  0% {
+    transform: translateX(60px);
+  }
+  40% {
+    stroke-dashoffset: 0px;
+  }
+  85% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0px);
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes End {
+  0% {
+    transform: translateX(-60px);
+  }
+  40% {
+    stroke-dashoffset: 0px;
+  }
+  85% {
+    transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(1px);
+    stroke-dashoffset: 0px;
+  }
+}
+:root {
+  --White: #ececec;
+  --Black: #1a1a1a;
+  --Red: #E47373;
+  --TransparentRed: #e473739f;
+}
+
+:root {
+  --light-bg: #ececec;
+  --light-color: #1a1a1a;
+  --light-active: scale(1.2);
+  --light-bgTransparent: #fafafa3a;
+}
+
+:root {
+  --dark-bg: #1a1a1a;
+  --dark-color: #ececec;
+  --dark-active: scale(1.2);
+  --dark-bgTransparent: #1a1a1a3a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono";
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+}
+
+header {
+  transition: 0.25s;
+  z-index: 99;
+  width: 100%;
+  position: fixed;
+  background-color: var(--bgHeader);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+header a {
+  text-decoration: none;
+}
+header .Container {
+  z-index: 3;
+  position: relative;
+  height: 52px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+header .Container .headerText {
+  color: var(--color);
+  transition: ease-out 0.1s;
+  margin-top: 19px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+header .Container .headerText:hover {
+  margin-top: 4px;
+  transition: ease-out 0.17s;
+  color: var(--Red);
+}
+header .HeaderLine {
+  z-index: 3;
+  position: relative;
+  height: 2.5px;
+  width: 95%;
+  margin: 0 2.5% 0 2.5%;
+  background-color: var(--bgR);
+  border-radius: 5px;
+}
+
+main #darkMode {
+  position: absolute;
+  height: 6%;
+  width: 3%;
+  right: 0%;
+  bottom: 2%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.MainPage {
+  height: 108vh;
+  width: 100%;
+}
+
+.horizontalScroller {
+  padding: 2rem 0 1rem 0;
+  height: 100vh;
+  position: relative;
+}
+
+.horizontalScroller__backtext .PortfolioText {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 18%;
+  left: -2%;
+  font-size: 16vw;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Asap";
+  letter-spacing: -70px;
+  font-weight: 400;
+  color: var(--color);
+}
+
+.horizontalScroller__scroll {
+  height: 100%;
+  position: relative;
+}
+.horizontalScroller__scroll .horizontalScroller__images {
+  padding: 2% 0 7% 0;
+  margin-left: 15%;
+  width: 200%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item {
+  overflow: hidden;
+  position: relative;
+  color: var(--color);
+  text-shadow: none;
+  width: 15%;
+  height: 35vw;
+  margin-right: 10%;
+  background-color: rgba(87, 88, 88, 0.3);
+  border-radius: 20% 10% 20% 10%;
+  padding: 1%;
+  color: var(--color);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  font-size: 1.5vw;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .ScrollTitle {
+  font-size: 2.5vw;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .ScrollLogo {
+  width: 5vw;
+  height: 5vw;
+  filter: drop-shadow(0.2vw 0.2vw 0.2vh #1a1a1a);
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .TextContainer {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  position: relative;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .TextContainer .ScrollerText {
+  font-size: 1.45vw;
+  letter-spacing: -0.4vh;
+  position: absolute;
+  top: 0vh;
+  transition: ease-in-out 0.5s;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .TextContainer .ScrollerText .Line {
+  width: 100%;
+  height: 0.3vh;
+  background-color: var(--color);
+  border-radius: 2vw;
+  margin: 3% 0;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .BackImg {
+  width: 10.5vw;
+  height: 8vw;
+  position: absolute;
+  opacity: 0.67;
+  top: 20%;
+  left: 20%;
+  z-index: -1;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .BackImg:first-child {
+  top: 37%;
+  left: 13%;
+  rotate: 19deg;
+  scale: 0.85;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .BackImg:nth-child(2) {
+  top: 7%;
+  left: 57%;
+  rotate: -14deg;
+  opacity: 0.8;
+  scale: 1.07;
+  opacity: 0.46;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .BackImg:last-child {
+  top: 60%;
+  left: 50%;
+  rotate: 5deg;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .SiteImage {
+  width: 270%;
+  height: 160%;
+  z-index: 5;
+  position: absolute;
+  top: 0%;
+  left: -50%;
+}
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item:nth-child(2) {
+  border-radius: 10% 20% 10% 20%;
+  margin-top: 2%;
+}
+
+.contact {
+  height: 100vh;
+  width: 100%;
+}
+
+.EndLine {
+  width: 100%;
+  height: 55px;
+  background-color: var(--Red);
+  position: relative;
+  top: -100px;
+  left: 0;
+}
+.EndLine .LineUp {
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--color);
+  position: absolute;
+  top: -2px;
+  left: 3%;
+}
+.EndLine .LineBot {
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--color);
+  position: absolute;
+  bottom: -2px;
+  right: 3%;
+}
+.EndLine .MainEndLineText {
+  text-wrap: nowrap;
+  width: 100%;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 150;
+  color: var(--colorR);
+}
+
+.AboutEndLine {
+  width: 100%;
+  height: 55px;
+  position: relative;
+}
+.AboutEndLine .AboutLineUp {
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--color);
+  position: absolute;
+  top: -2px;
+  right: 3%;
+}
+.AboutEndLine .AboutLineBot {
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--color);
+  position: absolute;
+  bottom: -2px;
+  left: 3%;
+}
+.AboutEndLine .AboutLineText {
+  text-wrap: nowrap;
+  width: 100%;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 250;
+  text-transform: uppercase;
+  color: var(--color);
+  font-family: "Asap";
+  word-spacing: 10px;
+  margin-left: -1000px;
+  animation: MoveLine 6s linear infinite;
+}
+.AboutEndLine .AboutLineText .cursivetext {
+  font-family: "Spirax";
+  word-spacing: 10px;
+  letter-spacing: 3px;
+}
+
+.MainPage {
+  height: 115vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.SocialMedia {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: 15px;
+}
+.SocialMedia .Social {
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.SocialMedia .Social #instagram {
+  height: 40px;
+  position: relative;
+}
+.SocialMedia .Social #instagram:hover #i {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s;
+}
+.SocialMedia .Social #instagram:hover #n {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.05s;
+}
+.SocialMedia .Social #instagram:hover #s {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s 0.1s;
+}
+.SocialMedia .Social #instagram:hover #t {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.15s;
+}
+.SocialMedia .Social #instagram:hover #a {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.2s;
+}
+.SocialMedia .Social #instagram:hover #g {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.25s;
+}
+.SocialMedia .Social #instagram:hover #r {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.3s;
+}
+.SocialMedia .Social #instagram:hover #a1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.35s;
+}
+.SocialMedia .Social #instagram:hover #m {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.4s;
+}
+.SocialMedia .Social #instagram #i {
+  transition: ease 1s 0.4s;
+}
+.SocialMedia .Social #instagram #n {
+  transition: ease 1s 0.35s;
+}
+.SocialMedia .Social #instagram #s {
+  transition: ease 1s 0.3s;
+}
+.SocialMedia .Social #instagram #t {
+  transition: ease 1s 0.25s;
+}
+.SocialMedia .Social #instagram #a {
+  transition: ease 1s 0.2s;
+}
+.SocialMedia .Social #instagram #g {
+  transition: ease 1s 0.15s;
+}
+.SocialMedia .Social #instagram #r {
+  transition: ease 1s 0.1s;
+}
+.SocialMedia .Social #instagram #a1 {
+  transition: ease 1s 0.05s;
+}
+.SocialMedia .Social #instagram #m {
+  transition: ease 1s;
+}
+.SocialMedia .Social #instagram div {
+  background-color: var(--bg);
+  position: relative;
+  perspective: 20000px;
+  transform-style: preserve-3d;
+}
+.SocialMedia .Social #instagram div .normalfont {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.SocialMedia .Social #instagram div .cursivefont {
+  font-family: "Spirax";
+  font-weight: 600;
+  transform: rotateX(-90deg) translateZ(20px);
+}
+.SocialMedia .Social .href {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+.SocialMedia .Social #github {
+  position: relative;
+  height: 40px;
+}
+.SocialMedia .Social #github:hover #g1 {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s;
+}
+.SocialMedia .Social #github:hover #i1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.05s;
+}
+.SocialMedia .Social #github:hover #t1 {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s 0.1s;
+}
+.SocialMedia .Social #github:hover #h {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.15s;
+}
+.SocialMedia .Social #github:hover #u {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.2s;
+}
+.SocialMedia .Social #github:hover #b {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.25s;
+}
+.SocialMedia .Social #github #g1 {
+  transition: ease 1s 0.25s;
+}
+.SocialMedia .Social #github #i1 {
+  transition: ease 1s 0.2s;
+}
+.SocialMedia .Social #github #t1 {
+  transition: ease 1s 0.15s;
+}
+.SocialMedia .Social #github #h {
+  transition: ease 1s 0.1s;
+}
+.SocialMedia .Social #github #u {
+  transition: ease 1s 0.05s;
+}
+.SocialMedia .Social #github #b {
+  transition: ease 1s;
+}
+.SocialMedia .Social #github div {
+  background-color: var(--bg);
+  position: relative;
+  perspective: 20000px;
+  transform-style: preserve-3d;
+}
+.SocialMedia .Social #github div .normalfont {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.SocialMedia .Social #github div .cursivefont {
+  font-family: "Spirax";
+  font-weight: 600;
+  transform: rotateX(-90deg) translateZ(20px);
+}
+.SocialMedia .Social #facebook {
+  height: 40px;
+  position: relative;
+}
+.SocialMedia .Social #facebook:hover #f {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s;
+}
+.SocialMedia .Social #facebook:hover #a2 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.05s;
+}
+.SocialMedia .Social #facebook:hover #c {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s 0.1s;
+}
+.SocialMedia .Social #facebook:hover #e {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.15s;
+}
+.SocialMedia .Social #facebook:hover #b1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.2s;
+}
+.SocialMedia .Social #facebook:hover #o {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.25s;
+}
+.SocialMedia .Social #facebook:hover #o1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.3s;
+}
+.SocialMedia .Social #facebook:hover #k {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.35s;
+}
+.SocialMedia .Social #facebook #f {
+  transition: ease 1s 0.35s;
+}
+.SocialMedia .Social #facebook #a2 {
+  transition: ease 1s 0.3s;
+}
+.SocialMedia .Social #facebook #c {
+  transition: ease 1s 0.25s;
+}
+.SocialMedia .Social #facebook #e {
+  transition: ease 1s 0.2s;
+}
+.SocialMedia .Social #facebook #b1 {
+  transition: ease 1s 0.15s;
+}
+.SocialMedia .Social #facebook #o {
+  transition: ease 1s 0.1s;
+}
+.SocialMedia .Social #facebook #o1 {
+  transition: ease 1s 0.05s;
+}
+.SocialMedia .Social #facebook #k {
+  transition: ease 1s;
+}
+.SocialMedia .Social #facebook div {
+  background-color: var(--bg);
+  position: relative;
+  perspective: 20000px;
+  transform-style: preserve-3d;
+}
+.SocialMedia .Social #facebook div .normalfont {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.SocialMedia .Social #facebook div .cursivefont {
+  font-family: "Spirax";
+  font-weight: 600;
+  transform: rotateX(-90deg) translateZ(20px);
+}
+.SocialMedia .Social div {
+  margin-right: 25px;
+  display: flex;
+}
+.SocialMedia .Social div span {
+  position: absolute;
+  font-weight: 500;
+  margin: 0;
+  font-size: 30px;
+}
+
+.AboutMeSection {
+  width: 100vw;
+  height: 280vh;
+}
+.AboutMeSection .AboutBackgroundText {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+}
+.AboutMeSection .AboutBackgroundText #FixedText {
+  width: 100%;
+  font-size: 15vw;
+  text-align: center;
+  font-family: "Sansation";
+  position: absolute;
+  z-index: 3;
+}
+.AboutMeSection .AboutBackgroundText .AboutTextCard {
+  width: 40vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 1.5vw;
+  color: #fafafa;
+  background-color: var(--bgTransparent);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  text-shadow: 0 0 10px #fafafa, 0 0 20px #fafafa;
+  transition: 2s;
+}
+.AboutMeSection .AboutBackgroundText #WhereFromText {
+  border-radius: 7rem 7rem 2rem 2rem;
+  padding: 10vw 1vw 3rem 1vw;
+  position: absolute;
+  z-index: 4;
+  top: 10rem;
+  left: 5vh;
+}
+.AboutMeSection .AboutBackgroundText #MyLifeText {
+  border-radius: 7rem 7rem 2rem 2rem;
+  position: absolute;
+  padding: 10vw 1vw 3vw 1vw;
+  z-index: 4;
+  right: 5rem;
+  top: 50vh;
+}
+.AboutMeSection .AboutBackgroundText #MyAimsText {
+  border-radius: 2rem 2rem 7rem 7rem;
+  position: absolute;
+  padding: 3vw 1vw 10vw 1vw;
+  z-index: 4;
+  left: 8rem;
+  bottom: 60vh;
+}
+.AboutMeSection .AboutBackgroundText #MyBenefitsText {
+  border-radius: 2rem 2rem 7rem 7rem;
+  position: absolute;
+  padding: 3vw 1vw 10vw 1vw;
+  z-index: 4;
+  right: 12rem;
+  bottom: 20vh;
+}
+
+.EndLineContact {
+  width: 100%;
+  height: 55px;
+  position: relative;
+  left: 0;
+}
+.EndLineContact .LineUpContact {
+  top: -2px;
+  left: 3%;
+  z-index: 6;
+}
+.EndLineContact .LineBotContact {
+  bottom: -6px;
+  right: 3%;
+  z-index: 20;
+}
+.EndLineContact .ContainerLine {
+  position: relative;
+  perspective: 20000px;
+  transform-style: preserve-3d;
+  animation: RotateLine 4s ease infinite;
+  z-index: 5;
+}
+.EndLineContact .ContainerLine div {
+  background-color: var(--bg);
+}
+.EndLineContact .ContainerLine #TextEng {
+  text-wrap: nowrap;
+  width: 100%;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 250;
+  color: var(--color);
+  position: absolute;
+  transform: rotateX(0deg) translateZ(20px);
+  z-index: 4;
+}
+.EndLineContact .ContainerLine #TextCz {
+  text-wrap: nowrap;
+  width: 100%;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 250;
+  color: var(--color);
+  position: absolute;
+  transform: rotateX(90deg) translateZ(20px);
+  z-index: 5;
+}
+.EndLineContact .ContainerLine #TextEng2 {
+  height: -moz-fit-content;
+  height: fit-content;
+  text-wrap: nowrap;
+  width: 100%;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 250;
+  color: var(--color);
+  position: absolute;
+  transform: rotateX(180deg) translateZ(20px);
+  z-index: 5;
+}
+.EndLineContact .ContainerLine #TextCz2 {
+  text-wrap: nowrap;
+  width: 100%;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 250;
+  color: var(--color);
+  position: absolute;
+  transform: rotateX(270deg) translateZ(20px);
+  z-index: 5;
+}
+.EndLineContact .LineUpContact,
+.EndLineContact .LineBotContact {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--color);
+  position: absolute;
+}
+
+.NotVisible {
+  display: none;
+}
+
+.ContactMeSection {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg);
+  padding: 5vh 3%;
+  position: relative;
+}
+.ContactMeSection .SVGContainer {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+.ContactMeSection .SVGContainer:hover .ButtonToStart {
+  transition: 0.3s ease-in-out;
+  transform: translateY(1vw);
+}
+.ContactMeSection .SVGContainer .ContactsLogoText {
+  position: relative;
+  height: 60%;
+  width: 97.5%;
+}
+.ContactMeSection .SVGContainer .ButtonToStart {
+  position: absolute;
+  top: 35%;
+  right: -18%;
+  width: 40%;
+  height: 40%;
+  transition: 0.3s ease-in-out;
+}
+.ContactMeSection .SVGContainer .ButtonToStart path {
+  transition: d 0.3s ease-in-out;
+}
+.ContactMeSection .Credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: default;
+}
+.ContactMeSection .Credits span {
+  padding: 1vw;
+  font-size: 2vw;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: -1vw;
+  letter-spacing: -0.3rem;
+  padding-left: 0;
+}
+.ContactMeSection .EmailContainer {
+  width: 30%;
+  height: 12%;
+  position: relative;
+  border-radius: 50vw;
+  border: 0.2vw solid;
+  overflow: hidden;
+}
+.ContactMeSection .EmailContainer .email {
+  min-width: 100%;
+  height: 100%;
+  text-wrap: nowrap;
+  border-radius: 50vw;
+  padding: 0 2vw;
+  font-size: 2vw;
+  letter-spacing: 1vh;
+  color: var(--color);
+  border-color: var(--color);
+  text-align: center;
+  align-content: center;
+  position: relative;
+}
+.ContactMeSection .EmailContainer .email:hover {
+  font-family: "Whisper";
+  font-size: 3vw;
+  color: var(--bg);
+}
+.ContactMeSection .EmailContainer .ButtonFill {
+  width: 150%;
+  height: 850%;
+  background-color: var(--color);
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  border-radius: 100%;
+  transition: 0.4s ease;
+}
+.ContactMeSection .SocialContainer {
+  height: 28vh;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.ContactMeSection .SocialContainer .SocialContact {
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: -0.8vw;
+  z-index: 50;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram {
+  height: 40px;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #i {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #n {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.05s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #s {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s 0.1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #t {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.15s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #a {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.2s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #g {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.25s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #r {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.3s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #a1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.35s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram:hover #m {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.4s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #i {
+  transition: ease 1s 0.4s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #n {
+  transition: ease 1s 0.35s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #s {
+  transition: ease 1s 0.3s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #t {
+  transition: ease 1s 0.25s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #a {
+  transition: ease 1s 0.2s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #g {
+  transition: ease 1s 0.15s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #r {
+  transition: ease 1s 0.1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #a1 {
+  transition: ease 1s 0.05s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram #m {
+  transition: ease 1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram div {
+  background-color: var(--bg);
+  position: relative;
+  perspective: 20000px;
+  transform-style: preserve-3d;
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram div .normalfont {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.ContactMeSection .SocialContainer .SocialContact #instagram div .cursivefont {
+  font-family: "Spirax";
+  font-weight: 600;
+  transform: rotateX(-90deg) translateZ(20px);
+}
+.ContactMeSection .SocialContainer .SocialContact #github {
+  height: 40px;
+}
+.ContactMeSection .SocialContainer .SocialContact #github:hover #g1 {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github:hover #i1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.05s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github:hover #t1 {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s 0.1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github:hover #h {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.15s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github:hover #u {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.2s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github:hover #b {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.25s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github #g1 {
+  transition: ease 1s 0.25s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github #i1 {
+  transition: ease 1s 0.2s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github #t1 {
+  transition: ease 1s 0.15s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github #h {
+  transition: ease 1s 0.1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github #u {
+  transition: ease 1s 0.05s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github #b {
+  transition: ease 1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #github div {
+  background-color: var(--bg);
+  position: relative;
+  perspective: 20000px;
+  transform-style: preserve-3d;
+}
+.ContactMeSection .SocialContainer .SocialContact #github div .normalfont {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.ContactMeSection .SocialContainer .SocialContact #github div .cursivefont {
+  font-family: "Spirax";
+  font-weight: 600;
+  transform: rotateX(-90deg) translateZ(20px);
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook {
+  height: 40px;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #f {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #a2 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.05s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #c {
+  transform: rotateX(90deg) translateZ(-3.5px);
+  transition: ease 1s 0.1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #e {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.15s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #b1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.2s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #o {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.25s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #o1 {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.3s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook:hover #k {
+  transform: rotateX(90deg) translateZ(-2.5px);
+  transition: ease 1s 0.35s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #f {
+  transition: ease 1s 0.35s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #a2 {
+  transition: ease 1s 0.3s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #c {
+  transition: ease 1s 0.25s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #e {
+  transition: ease 1s 0.2s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #b1 {
+  transition: ease 1s 0.15s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #o {
+  transition: ease 1s 0.1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #o1 {
+  transition: ease 1s 0.05s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook #k {
+  transition: ease 1s;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook div {
+  background-color: var(--bg);
+  position: relative;
+  perspective: 20000px;
+  transform-style: preserve-3d;
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook div .normalfont {
+  transform: rotateX(0deg) translateZ(20px);
+}
+.ContactMeSection .SocialContainer .SocialContact #facebook div .cursivefont {
+  font-family: "Spirax";
+  font-weight: 600;
+  transform: rotateX(-90deg) translateZ(20px);
+}
+.ContactMeSection .SocialContainer .SocialContact div {
+  margin-right: 25px;
+  display: flex;
+}
+.ContactMeSection .SocialContainer .SocialContact div span {
+  position: absolute;
+  font-weight: 500;
+  margin: 0;
+  font-size: 30px;
+}
+
+.SloganContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.SloganContainer .Cursor {
+  width: 15%;
+  height: 30%;
+  background-color: #ebebeb;
+  position: absolute;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 0.2vw solid #1a1a1a;
+  cursor: none;
+}
+.SloganContainer .Cursor .Slogan {
+  width: 15%;
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+body.light {
+  --bg: var(--light-bg);
+  --bgHeader: #ecececa8;
+  --bgR: var(--dark-bg);
+  --color: var(--light-color);
+  --colorR: var(--dark-color);
+  --active: var(--light-active);
+  --bgTransparent: var(--dark-bgTransparent);
+}
+
+body.dark {
+  --bg: var(--dark-bg);
+  --bgHeader: #1a1a1a98;
+  --bgR: #eaeaeb;
+  --color: #eaeaeb;
+  --colorR: var(--light-color);
+  --active: var(--dark-active);
+  --bgTransparent: var(--light-bgTransparent);
+}
+
+.Text {
+  height: 60%;
+  width: 50%;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 9%;
+}
+.Text :nth-child(1) {
+  stroke-dashoffset: 80px;
+  stroke-dasharray: 80px;
+  animation: Income 0.8s ease-in-out 0.2s forwards;
+}
+.Text :nth-child(2) {
+  stroke-dashoffset: 80px;
+  stroke-dasharray: 80px;
+  animation: Income 1s ease-in-out 0.2s forwards;
+}
+.Text :nth-child(3) {
+  stroke-dashoffset: 140px;
+  stroke-dasharray: 140px;
+  animation: Income 0.8s ease-in-out 0.55s forwards;
+}
+.Text :nth-child(4) {
+  stroke-dashoffset: 200px;
+  stroke-dasharray: 200px;
+  animation: Income 1s ease-in-out 0.6s forwards;
+}
+.Text :nth-child(37) {
+  stroke-dashoffset: 200px;
+  stroke-dasharray: 200px;
+  animation: Income 1s ease-in-out 0.9s forwards;
+}
+.Text :nth-child(5) {
+  stroke-dashoffset: 290px;
+  stroke-dasharray: 290px;
+  animation: Income 1.23s ease-in-out 0.7s forwards;
+}
+.Text :nth-child(6) {
+  stroke-dashoffset: 110px;
+  stroke-dasharray: 110px;
+  animation: IncomeRed 1.23s ease-in-out 0.76s forwards;
+}
+.Text :nth-child(7) {
+  stroke-dashoffset: 80px;
+  stroke-dasharray: 80px;
+  animation: Income 1.23s ease-in-out 2s forwards;
+}
+.Text :nth-child(8) {
+  stroke-dashoffset: 200px;
+  stroke-dasharray: 200px;
+  animation: Income 1s ease-in-out 1.4s forwards;
+}
+.Text :nth-child(38) {
+  stroke-dashoffset: 60px;
+  stroke-dasharray: 60px;
+  animation: Income 1.23s ease-in-out 2s forwards;
+}
+.Text :nth-child(9) {
+  stroke-dashoffset: 350px;
+  stroke-dasharray: 350px;
+  animation: Income 0.8s ease-in-out 1.47s forwards;
+}
+.Text :nth-child(10) {
+  stroke-dashoffset: 160px;
+  stroke-dasharray: 160px;
+  animation: IncomeRed 1.23s ease-in-out 1.8s forwards;
+}
+.Text :nth-child(11) {
+  stroke-dashoffset: 130px;
+  stroke-dasharray: 130px;
+  animation: Income 1s ease-in-out 1.57s forwards;
+}
+.Text :nth-child(12) {
+  stroke-dashoffset: 280px;
+  stroke-dasharray: 280px;
+  animation: Income 1s ease-in-out 1.75s forwards;
+}
+.Text :nth-child(13) {
+  stroke-dashoffset: 150px;
+  stroke-dasharray: 150px;
+  animation: Income 1s ease-in-out 2.1s forwards;
+}
+.Text :nth-child(39) {
+  stroke-dashoffset: 200px;
+  stroke-dasharray: 200px;
+  animation: Income 1s ease-in-out 2.5s forwards;
+}
+.Text :nth-child(14) {
+  stroke-dashoffset: 350px;
+  stroke-dasharray: 350px;
+  animation: IncomeRed 1.23s ease-in-out 2.2s forwards;
+}
+.Text :nth-child(15) {
+  stroke-dashoffset: 220px;
+  stroke-dasharray: 220px;
+  animation: Income 1s ease-in-out 2s forwards;
+}
+.Text :nth-child(16) {
+  stroke-dashoffset: 170px;
+  stroke-dasharray: 170px;
+  animation: Front 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(17) {
+  stroke-dashoffset: 120px;
+  stroke-dasharray: 120px;
+  animation: Front 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(18) {
+  stroke-dashoffset: 90px;
+  stroke-dasharray: 90px;
+  animation: Front 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(19) {
+  stroke-dashoffset: 290px;
+  stroke-dasharray: 290px;
+  animation: Front 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(20) {
+  stroke-dashoffset: 200px;
+  stroke-dasharray: 200px;
+  animation: Front 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(21) {
+  stroke-dashoffset: 170px;
+  stroke-dasharray: 170px;
+  animation: Front 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(22) {
+  stroke-dashoffset: 70px;
+  stroke-dasharray: 70px;
+  animation: Front 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(23) {
+  stroke-dashoffset: 80px;
+  stroke-dasharray: 80px;
+  animation: IncomeRed 0.8s ease-in-out 5.8s forwards;
+}
+.Text :nth-child(36) {
+  stroke-dashoffset: 80px;
+  stroke-dasharray: 80px;
+  animation: IncomeRed 0.8s ease-in-out 5.8s forwards;
+}
+.Text :nth-child(24) {
+  stroke-dashoffset: 350px;
+  stroke-dasharray: 350px;
+  animation: End 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(25) {
+  stroke-dashoffset: 200px;
+  stroke-dasharray: 200px;
+  animation: End 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(26) {
+  stroke-dashoffset: 300px;
+  stroke-dasharray: 300px;
+  animation: End 3.4s ease-in-out 2.8s forwards;
+}
+.Text :nth-child(27) {
+  stroke-dashoffset: 540px;
+  stroke-dasharray: 540px;
+  animation: IncomeRed 1s ease-in-out 3.7s forwards;
+}
+.Text :nth-child(28) {
+  stroke-dashoffset: 380px;
+  stroke-dasharray: 380px;
+  animation: Income 1s ease-in-out 4.05s forwards;
+}
+.Text :nth-child(29) {
+  stroke-dashoffset: 240px;
+  stroke-dasharray: 240px;
+  animation: IncomeRed 0.8s ease-in-out 3.93s forwards;
+}
+.Text :nth-child(30) {
+  stroke-dashoffset: 380px;
+  stroke-dasharray: 380px;
+  animation: Income 1.23s ease-in-out 4.15s forwards;
+}
+.Text :nth-child(31) {
+  stroke-dashoffset: 180px;
+  stroke-dasharray: 180px;
+  animation: Income 1s ease-in-out 4.1s forwards;
+}
+.Text :nth-child(32) {
+  stroke-dashoffset: 340px;
+  stroke-dasharray: 340px;
+  animation: Income 1s ease-in-out 4.45s forwards;
+}
+.Text :nth-child(33) {
+  stroke-dashoffset: 320px;
+  stroke-dasharray: 320px;
+  animation: IncomeRed 1.3s ease-in-out 4.35s forwards;
+}
+.Text :nth-child(34) {
+  stroke-dashoffset: 380px;
+  stroke-dasharray: 380px;
+  animation: Income 1.53s ease-in-out 4.55s forwards;
+}
+.Text :nth-child(35) {
+  stroke-dashoffset: 120px;
+  stroke-dasharray: 120px;
+  animation: Income 1.8s ease-in-out 4.42s forwards;
+}
+.Text :nth-child(40) {
+  stroke-dashoffset: 80px;
+  stroke-dasharray: 80px;
+  animation: Income 1.8s ease-in-out 4.7s forwards;
+}
+
+.ContactsLogoText :nth-child(1) {
+  stroke-dashoffset: 130px;
+  stroke-dasharray: 130px;
+}
+.ContactsLogoText :nth-child(2) {
+  stroke-dashoffset: 200px;
+  stroke-dasharray: 200px;
+}
+.ContactsLogoText :nth-child(3) {
+  stroke-dashoffset: 130px;
+  stroke-dasharray: 130px;
+}
+.ContactsLogoText :nth-child(4) {
+  stroke-dashoffset: 250px;
+  stroke-dasharray: 250px;
+}
+.ContactsLogoText :nth-child(5) {
+  stroke-dashoffset: 350px;
+  stroke-dasharray: 350px;
+}
+.ContactsLogoText :nth-child(6) {
+  stroke-dashoffset: 480px;
+  stroke-dasharray: 480px;
+}
+.ContactsLogoText :nth-child(7) {
+  stroke-dashoffset: 185px;
+  stroke-dasharray: 185px;
+}
+.ContactsLogoText :nth-child(8) {
+  stroke-dashoffset: 130px;
+  stroke-dasharray: 130px;
+}
+.ContactsLogoText :nth-child(9) {
+  stroke-dashoffset: 450px;
+  stroke-dasharray: 450px;
+}
+.ContactsLogoText :nth-child(10) {
+  stroke-dashoffset: 400px;
+  stroke-dasharray: 400px;
+}
+.ContactsLogoText :nth-child(11) {
+  stroke-dashoffset: 500px;
+  stroke-dasharray: 500px;
+}
+.ContactsLogoText :nth-child(12) {
+  stroke-dashoffset: 290px;
+  stroke-dasharray: 290px;
+}
+.ContactsLogoText :nth-child(13) {
+  stroke-dashoffset: 450px;
+  stroke-dasharray: 450px;
+}
+.ContactsLogoText :nth-child(14) {
+  stroke-dashoffset: 400px;
+  stroke-dasharray: 400px;
+}
+.ContactsLogoText :nth-child(15) {
+  stroke-dashoffset: 450px;
+  stroke-dasharray: 450px;
+}
+.ContactsLogoText :nth-child(16) {
+  stroke-dashoffset: 450px;
+  stroke-dasharray: 450px;
+}
+.ContactsLogoText :nth-child(17) {
+  stroke-dashoffset: 300px;
+  stroke-dasharray: 300px;
+}
+.ContactsLogoText :nth-child(18) {
+  stroke-dashoffset: 500px;
+  stroke-dasharray: 500px;
+}
+.ContactsLogoText :nth-child(19) {
+  stroke-dashoffset: 400px;
+  stroke-dasharray: 400px;
+}
+
+.CursorContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: transparent;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.CursorContainer #Cursor {
+  width: 10vh;
+  height: 10vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+.CursorContainer #Cursor path {
+  fill: var(--color);
+}
+.CursorContainer #Cursor #SloganCz {
+  font-size: 4vh;
+  width: 30vw;
+  height: 30vh;
+  padding-top: 10vh;
+  padding-right: 2.5vw;
+  text-align: right;
+  position: fixed;
+  color: var(--colorR);
+}
+.CursorContainer #Cursor #SloganCz #SloganUnderlined {
+  letter-spacing: -0.4vw;
+}
+.CursorContainer .Tail {
+  width: 10vh;
+  height: 10vh;
+  position: absolute;
+  background-color: var(--color);
+  border-radius: 10vh;
+  animation: Extinct 0.1s ease-in forwards;
+  transform: translateX(-0.55vw) translateY(-2vh) scale(0.93);
+  z-index: -10;
+}
+
+@keyframes Extinct {
+  from {
+    scale: 1;
+    opacity: 1;
+  }
+  to {
+    scale: 0.6;
+    opacity: 0.7;
+    filter: blur(1vh);
+  }
+}
+.SloganContainer {
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 4vh;
+  color: var(--color);
+  text-align: right;
+  width: 102.5%;
+  padding: 3vh 5vw 2% 0;
+  z-index: 0;
+}
+.SloganContainer #SloganUnderlined {
+  transition: 0.7s ease;
+  position: relative;
+}
+.SloganContainer #SloganUnderlined .SloganLine {
+  width: 0%;
+  height: 10%;
+  border-radius: 50vw;
+  background-color: var(--color);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 0.7s ease;
+  display: flex;
+}
+.SloganContainer #SloganUnderlined:hover {
+  letter-spacing: -0.4vw;
+  transition: 0.7s ease;
+}
+.SloganContainer #SloganUnderlined:hover .SloganLine {
+  width: 101%;
+  transition: 0.7s ease;
+}
+
+.Visibility {
+  display: none;
+}
+
+.BlendCursor {
+  mix-blend-mode: difference;
+}
+.BlendCursor #Cursor path {
+  fill: rgb(255, 255, 255);
+}
+.BlendCursor .Tail {
+  background-color: rgb(255, 255, 255);
+}
+
+html {
+  width: 100%;
+}
+html body {
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--color);
+  transition: 0.25s;
+  width: 100%;
+}
+html ::-webkit-scrollbar {
+  width: 3.5px;
+}
+html ::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+html ::-webkit-scrollbar-thumb {
+  background-color: var(--color);
+}
+
+* {
+  cursor: none;
+}
+
+::-moz-selection {
+  background: var(--TransparentRed);
+}
+
+::selection {
+  background: var(--TransparentRed);
+}
+
+.Curtain {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #1a1a1a;
+  z-index: 999;
+  animation: DisplayNone 1s ease 0.4s forwards;
+}
+
+@keyframes DisplayNone {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

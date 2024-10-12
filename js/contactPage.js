@@ -1,28 +1,22 @@
-"use strict"
-
 function randomChar() {
-    const chars = `  ÈØàÞÚÐïíÛÕâäæîÖÝëå®¤êñ¬ã¥«ìª£§©çèðÿòôöþæíûõóùçëúï÷éщлпгюхя∂фшωсшλμτβρνσδπτξκμγηαψη
-ΩΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω  `;
+    const chars = `  ÈØàÞÚÐïíÛÕâäæîÖÝëå®¤êñ¬ã¥«ìª£§©çèðÿòôöþæíûõóùçëúï÷éщлпгюхя∂фшωсшλμτβρνσδπτξκμγηαψηΩΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ  `;
     return chars[Math.floor(Math.random() * chars.length)];
 }
 
 function shuffleText(text, revealCount) {
-    // Generate a random string of the same length as the text
     const totalLength = text.length;
     const randomText = Array.from({ length: totalLength }, () => randomChar()).join('');
-    // Replace characters with random ones if they are not yet revealed
     return text.split('').map((char, index) => index < revealCount ? char : randomText[index]).join('');
 }
 
 function animateShuffle(element, replacement, duration, callback) {
-    const interval = 25; // Interval in ms between character change
+    const interval = 25;
     const steps = duration / interval;
     let currentStep = 0;
     let revealCount = 0;
     const originalText = element.textContent;
     const targetLength = replacement.length;
 
-    // Function to start shuffling text
     function startShuffling() {
         const shuffleInterval = setInterval(() => {
             element.textContent = shuffleText(originalText, revealCount);
@@ -30,12 +24,11 @@ function animateShuffle(element, replacement, duration, callback) {
 
             if (currentStep >= steps / 2) {
                 clearInterval(shuffleInterval);
-                // Start revealing new text gradually
+
                 const revealInterval = setInterval(() => {
                     if (revealCount < targetLength) {
                         revealCount++;
                     }
-                    // Use the original length for shuffling, but reveal new text
                     element.textContent = shuffleText(replacement, revealCount);
 
                     if (revealCount >= targetLength) {
@@ -49,6 +42,27 @@ function animateShuffle(element, replacement, duration, callback) {
 
     startShuffling();
 }
+
+function setupEmailAnimation(duration) {
+    const emailElements = document.querySelectorAll('.email');
+
+    emailElements.forEach(element => {
+        const originalText = element.textContent;
+        const replacementText = element.getAttribute('data-replacement');
+
+        element.addEventListener('mouseenter', () => {
+            animateShuffle(element, replacementText, duration);
+        });
+
+        element.addEventListener('mouseleave', () => {
+            animateShuffle(element, originalText, duration);
+        });
+    });
+}
+
+setupEmailAnimation(1000);
+
+//! Mouse //
 
 function handleMouseEnter(container) {
     container.querySelectorAll('.shuffle').forEach(element => {
@@ -116,5 +130,23 @@ SVGcontainer.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
+    });
+});
+
+const ButtonFill = document.querySelector('.ButtonFill');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const emailContainer = document.querySelector('.EmailContainer');
+  
+    emailContainer.addEventListener('mousemove', function(event) {
+      const rect = emailContainer.getBoundingClientRect();
+      const xPercent = ((event.clientX - rect.left) / rect.width) * 100;
+      const yPercent = ((event.clientY - rect.top) / rect.height) * 100;
+      ButtonFill.style.left = `${xPercent - 75}%`;
+      ButtonFill.style.top = `${yPercent - 425}%`;
+      ButtonFill.style.scale = 1;
+    });
+    emailContainer.addEventListener('mouseleave', ()=> {
+        ButtonFill.style.scale = 0;
     });
 });

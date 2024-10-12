@@ -52,14 +52,83 @@ main{
     justify-content: start;
 
     .horizontalScroller__item {
+      overflow: hidden;
+      position: relative;
+      .ScrollTitle{
+        font-size: 2.5vw;
+      }
+      .ScrollLogo{
+        width: 5vw;
+        height: 5vw;
+        filter: drop-shadow(0.2vw 0.2vw 0.2vh #1a1a1a);
+      }
+      .TextContainer{
+        width: 100%;
+        height: 70%;
+        overflow: hidden;
+        position: relative;
+        .ScrollerText{
+          font-size: 1.45vw;
+          letter-spacing: -0.4vh;
+          position: absolute;
+          top: 0vh;
+          transition: ease-in-out 0.5s;
+          .Line{
+            width: 100%;
+            height: 0.3vh;
+            background-color: var(--color);
+            border-radius: 2vw;
+            margin: 3% 0;
+          }
+        }
+      }
+      color: var(--color);
+      text-shadow: none;
+      .BackImg{
+        width: 10.5vw;
+        height: 8vw;
+        position: absolute;
+        opacity: 0.67;
+        top: 20%;
+        left: 20%;
+        z-index: -1;
+        &:first-child{
+          top: 37%;
+          left: 13%;
+          rotate: 19deg;
+          scale: 0.85;
+        }
+        &:nth-child(2){
+          top: 7%;
+          left: 57%;
+          rotate: -14deg;
+          opacity: 0.8;
+          scale: 1.07;
+          opacity: 0.46;
+        }
+        &:last-child{
+          top: 60%;
+          left: 50%;
+          rotate: 5deg;
+        }
+      }
+      .SiteImage{
+        width: 270%;
+        height: 160%;
+        z-index: 5;
+        position: absolute;
+        top: 0%;
+        left: -50%;
+      }
       width: 15%;
-      height: 100%;
+      height: 35vw;
       margin-right: 10%;
       background-color: rgba(87, 88, 88, 0.3);
       border-radius: 20% 10% 20% 10%;
       padding: 1%;
       color: var(--color);
       backdrop-filter: blur(20px);
+      font-size: 1.5vw;
       &:nth-child(2){
         border-radius: 10% 20% 10% 20%;
         margin-top: 2%;
@@ -171,6 +240,7 @@ main{
     width: fit-content;
     #instagram{
       height: 40px;
+      position: relative;
       &:hover{
         #i{
           transform: rotateX(90deg) translateZ(-3.5px);
@@ -251,7 +321,14 @@ main{
         }
       }
     }
+    .href{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 10;
+    }
     #github{
+      position: relative;
       height: 40px;
       &:hover{
         #g1{
@@ -314,6 +391,7 @@ main{
     }
     #facebook{
       height: 40px;
+      position: relative;
       &:hover{
         #f{
           transform: rotateX(90deg) translateZ(-3.5px);
@@ -541,4 +619,8 @@ main{
     background-color: var(--color);
     position: absolute;
   }
+}
+
+.NotVisible{
+  display: none;
 }

@@ -3,23 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IgorJelysev Portfolio 2024</title>
-    <link rel="stylesheet" href="./styles/style.min.css" />
-    <script defer async src="./js/anime.js"></script>
-    <script defer async src="./js/themeswitch.js"></script>
-    <script defer async src="./js/scroll.js"></script>
-    <script defer async src="./js/contactPage.js"></script>
+    <title>Igor Jelysev Portfolio 2024</title>
+    <link rel="stylesheet" href="./sass/style.css"/>
+    <link rel="shortcut icon" href="./icons/Logo.png"/>
   </head>
   <body>
+    <div class="Curtain"></div>
+
     <header id="header">
       <div class="Container">
         <a href="#firstScrollItem">
           <div class="headerText">portfolio</div>
         </a>
-        <a href="">
+        <a href="#FixedText">
           <div class="headerText">about</div>
         </a>
-        <a href="">
+        <a href="#Contacts">
           <div class="headerText">contact</div>
         </a>
       </div>
@@ -27,7 +26,6 @@
     </header>
     <main>
       <svg
-        onclick="Switch()"
         id="darkMode"
         width="64"
         height="64"
@@ -302,6 +300,7 @@
         <div class="SocialMedia">
           <div class="Social">
             <div id="instagram">
+              <a target="_blank" class="href" href="https://www.instagram.com/igyell/"></a>
               <div id="i">
                 <span class="normalfont">i</span>
                 <span class="cursivefont">i</span>
@@ -340,6 +339,7 @@
               </div>
             </div>
             <div id="github">
+              <a target="_blank" class="href" href="https://github.com/IgYel"></a>
               <div id="g1">
                 <span class="normalfont">g</span>
                 <span class="cursivefont">g</span>
@@ -366,6 +366,7 @@
               </div>
             </div>
             <div id="facebook">
+              <a target="_blank" class="href" href="https://www.facebook.com/igor.yelyshev/"></a>
               <div id="f">
                 <span class="normalfont">f</span>
                 <span class="cursivefont">f</span>
@@ -425,15 +426,61 @@
           </div>
           <div class="LineBot"></div>
         </div>
+
         <div class="horizontalScroller__scroll">
           <div class="horizontalScroller__images" id="horizontal-scroll">
             <div id="firstScrollItem" class="horizontalScroller__item">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ea
-              officia quaerat, dicta labore ducimus?
+              <img class="ScrollLogo" src="./icons/FavIcon.png" alt="logo">
+              <br>
+              <span class="ScrollTitle">
+                -Macaroon Shop-
+              </span>
+              <br>
+              <div id="TextContainer1" class="TextContainer">
+                <span id="ScrollerText1" class="ScrollerText">
+                  <span>
+                    My first big project after 2 month of styding. 3 Pages Website for selling sweets and candies like macaroon etc. Design is not mine, but I was coding it. Mostly made with SASS and a little pinch of Java Script.
+                    The idea was to make as much animations, styles and other css functions as possible (in 2.5 weeks). And I believe I did it Perfect!
+                  </span>
+                  <div class="Line"></div>
+                  <span>
+                    Můj první velký projekt po dvou měsících studia. Třístránkový web pro prodej sladkostí a cukrovinek jako makronky apod. Design není můj, ale kódování jsem dělal já. Většina webu je vytvořena pomocí SASS s trochou JavaScriptu. 
+                    Cílem bylo vytvořit co nejvíce animací, stylů a dalších CSS funkcí (během 2,5 týdne). A věřím, že se mi to povedlo perfektně!
+                  </span>
+                </span>
+              </div>
+              <div class="ImagesHorizontal">
+                <img class="BackImg"
+                src="./icons/macaroon3.png" alt="">
+                <img class="BackImg"
+                src="./icons/macaroon5.png" alt="">
+                <img class="BackImg"
+                src="./icons/macaroon6.png" alt="">
+              </div>
             </div>
             <div id="SecondScrollItem" class="horizontalScroller__item">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed
-              repellendus fugit.
+              <img class="ScrollLogo" src="./icons/FavIcon.png" alt="logo">
+              <br>
+              <span class="ScrollTitle">
+                Customs
+              </span>
+              <br>
+              <div id="TextContainer2" class="TextContainer">
+                <span id="ScrollerText2" class="ScrollerText">
+                  <span>
+                    My second big project after 4 month of styding. Final project of my academy STEP IT.
+                    It is 1page website which is made to look like a company that makes custom guitars for famous people.
+                    I had 2 month and i had to make a web using Vite. 
+                    As I say website is based on a vanilla js, with such things like horizontal scroll and with a help of GSAP.
+                  </span>
+                  <div class="Line"></div>
+                  <span>
+                    Můj druhý velký projekt po 4 měsících studia. Závěrečný projekt mé akademie STEP IT.
+                    Jedná se o jednostránkový web, který je navržen tak, aby vypadal jako společnost vyrábějící zakázkové kytary pro slavné lidi. Měl jsem na to 2 měsíce a musel jsem vytvořit web s použitím Vite.
+                    Jak jsem řekl, web je postaven na vanilla JavaScriptu a pomoci GSAP.
+                  </span>
+                </span>
+              </div>
             </div>
             <div id="ThirdScrollItem" class="horizontalScroller__item">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -560,85 +607,85 @@
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M0 30H123" stroke="#D7D7D7" stroke-width="30" />
-            <path d="M62 30V220" stroke="#D7D7D7" stroke-width="30" />
-            <path d="M0 234H123.5" stroke="#D7D7D7" stroke-width="30" />
-            <path d="M138 2V249" stroke="#D7D7D7" stroke-width="32" />
+            <path d="M0 30H123" stroke="#1a1a1a" stroke-width="30" />
+            <path d="M62 30V220" stroke="#1a1a1a" stroke-width="30" />
+            <path d="M0 234H123.5" stroke="#1a1a1a" stroke-width="30" />
+            <path d="M138 2V249" stroke="#1a1a1a" stroke-width="32" />
             <path
               d="M269.5 233V141.5C269.5 45.9998 138 84.0001 138 147.5"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
               stroke-linecap="square"
               stroke-linejoin="round"
             />
             <path
               d="M373.5 85C274.5 85 273.501 235.5 373.5 235.5C473.5 235.5 472.501 85 373.5 85Z"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M478.5 248.5V159.25V70"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M543 85.5C523 85.5 477 99.5 477 166"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
               stroke-linecap="square"
               stroke-linejoin="round"
             />
             <path
               d="M615.5 16V118C615.5 192 775.593 196 776.5 118C777.3 49.2 776.5 16 776.5 16"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M776 30.5V168C776 274.5 690 291 621 240.5"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
               stroke-linecap="square"
               stroke-linejoin="round"
             />
             <path
               d="M951.791 202.85C907.788 251.85 827.582 239.35 809.788 174.35M809.788 174.35C785.288 84.8503 929.788 44.3504 948.788 144.85L809.788 174.35Z"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M982.5 1.5C982.9 5.9 982.666 132 982.5 194.5C982.5 211 988.5 241 1044 232.5"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M1041.5 70.5V173C1041.5 242.5 1172 239 1172 165.5C1172 100.7 1172 77.6667 1172 70.5"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M1172.5 134.5C1172.5 153.077 1172.5 188 1172.5 215C1172.5 292 1131.32 305.265 1079 293.782C1063.49 287.835 1047.67 277.751 1033 266.5"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M1187 213.5C1215.5 234.5 1309.5 252.001 1309.5 199.5C1309.5 137 1203.5 182.749 1203.5 122C1203.5 68.5 1287.5 75.4999 1319 104"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M1470 250V139.5C1470 47.5001 1337.5 85 1337.5 139.5C1337.5 215.1 1337.5 197.667 1337.5 179.5"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
-            <path d="M1337.5 1V249.5" stroke="#D7D7D7" stroke-width="32" />
+            <path d="M1337.5 1V249.5" stroke="#1a1a1a" stroke-width="32" />
             <path
               d="M1643.5 203C1599.5 252 1519.29 239.5 1501.5 174.5M1501.5 174.5C1477 84.9999 1621.5 44.5 1640.5 145L1501.5 174.5Z"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
             <path
               d="M1635.5 69.5L1708 233H1717.5L1789 70"
-              stroke="#D7D7D7"
+              stroke="#1a1a1a"
               stroke-width="32"
             />
           </svg>
@@ -660,7 +707,12 @@
             />
           </svg>
         </div>
-        <div class="email">send me email</div>
+        <div class="EmailContainer">
+          <div class="ButtonFill"></div>
+          <div data-replacement="pošlete mi email" class="email">
+            send me email
+          </div>
+        </div>
         <div class="SocialContainer">
           <div class="SocialContact">
             <div id="instagram">
@@ -763,8 +815,60 @@
             </div>
           </div>
         </div>
+
+        <div class="SloganContainer">
+          <div id="SloganEng">
+            lets create new <br>
+            projects <span id="SloganUnderlined">Together 
+              <div class="SloganLine"></div>
+            </span>
+          </div>
+        </div>
+        
       </section>
       <!-- ! -->
     </main>
+
+    <div class="CursorContainer">
+      <div id="Cursor">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="rgb(255, 255, 255)" transform="translate(100 100)">
+            <animate 
+              attributeName="d"
+              dur="3.4s"
+              repeatCount="indefinite"
+              values="M45,-78.1C59,-70,71.5,-59.2,80,-45.7C88.6,-32.3,93.2,-16.1,92.4,-0.5C91.6,15.2,85.2,30.4,77.1,44.5C68.9,58.6,58.9,71.7,45.8,79.7C32.7,87.7,16.3,90.5,0.6,89.6C-15.2,88.6,-30.4,83.9,-43.3,75.7C-56.1,67.5,-66.5,56,-73.6,42.8C-80.6,29.6,-84.4,14.8,-85.1,-0.4C-85.9,-15.7,-83.6,-31.3,-76.5,-44.4C-69.3,-57.5,-57.3,-68,-43.8,-76.4C-30.2,-84.8,-15.1,-91.2,0.2,-91.6C15.5,-92,31.1,-86.3,45,-78.1Z;
+              
+              M45.2,-77.9C58.9,-70.2,70.8,-59,77.8,-45.4C84.7,-31.8,86.8,-15.9,87.3,0.3C87.8,16.5,86.8,33,80.3,47.5C73.9,61.9,61.9,74.2,47.6,82.6C33.3,90.9,16.7,95.2,0,95.2C-16.6,95.1,-33.2,90.7,-47.3,82.3C-61.3,73.8,-72.8,61.2,-79.2,46.8C-85.6,32.4,-87,16.2,-87,0C-87.1,-16.3,-85.9,-32.6,-79.1,-46.2C-72.2,-59.8,-59.6,-70.7,-45.5,-78.1C-31.4,-85.5,-15.7,-89.5,0,-89.5C15.7,-89.5,31.4,-85.5,45.2,-77.9Z;
+              
+              M42.3,-71.7C55.1,-65.9,66,-55.1,74.1,-42.3C82.2,-29.6,87.5,-14.8,85.6,-1.1C83.7,12.6,74.5,25.1,65.6,36.5C56.7,47.9,48,58,37.1,66.2C26.2,74.4,13.1,80.7,0,80.7C-13.1,80.7,-26.3,74.5,-38.6,67.1C-50.9,59.7,-62.5,51.2,-70.8,39.9C-79.2,28.5,-84.3,14.2,-84.4,-0.1C-84.6,-14.4,-79.8,-28.9,-72.6,-42.3C-65.5,-55.6,-55.9,-68,-43.4,-74C-30.9,-80,-15.5,-79.6,-0.4,-79C14.8,-78.4,29.5,-77.5,42.3,-71.7Z;
+              
+              M45.3,-80.1C58.2,-71,67.9,-57.9,75.2,-43.9C82.5,-29.8,87.4,-14.9,88,0.3C88.5,15.5,84.6,31.1,76.7,44C68.7,56.9,56.8,67.3,43.3,75.3C29.9,83.3,14.9,88.9,0.1,88.7C-14.7,88.5,-29.4,82.4,-42.8,74.4C-56.2,66.3,-68.3,56.4,-76.3,43.7C-84.2,31,-88,15.5,-88.6,-0.3C-89.1,-16.1,-86.5,-32.3,-78.7,-45.3C-70.9,-58.3,-58,-68.2,-44,-76.7C-30,-85.2,-15,-92.4,0.6,-93.4C16.2,-94.4,32.4,-89.3,45.3,-80.1Z;
+              
+              M45,-78.1C59,-70,71.5,-59.2,80,-45.7C88.6,-32.3,93.2,-16.1,92.4,-0.5C91.6,15.2,85.2,30.4,77.1,44.5C68.9,58.6,58.9,71.7,45.8,79.7C32.7,87.7,16.3,90.5,0.6,89.6C-15.2,88.6,-30.4,83.9,-43.3,75.7C-56.1,67.5,-66.5,56,-73.6,42.8C-80.6,29.6,-84.4,14.8,-85.1,-0.4C-85.9,-15.7,-83.6,-31.3,-76.5,-44.4C-69.3,-57.5,-57.3,-68,-43.8,-76.4C-30.2,-84.8,-15.1,-91.2,0.2,-91.6C15.5,-92,31.1,-86.3,45,-78.1Z">
+            </animate>
+          </path>
+        </svg>
+        <div id="SloganCz">
+          Vytvářejme nové <br>
+          projekty 
+          <span id="SloganUnderlined">
+            Společně
+            <div class="SloganLine"></div>
+          </span>
+        </div>
+        
+      </div>
+
+      
+    </div>
+
+    <SCRIPTS>
+      <script src="./js/anime.js"></script>
+      <script src="./js/themeswitch.js"></script>
+      <script src="./js/scroll.js"></script>
+      <script src="./js/contactPage.js"></script>
+      <script src="./js/cursor.js"></script>
+    </SCRIPTS>
   </body>
 </html>

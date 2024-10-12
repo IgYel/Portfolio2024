@@ -5,13 +5,16 @@ const darkModeButton = document.getElementById("darkMode");
 let isDarkMode = localStorage.getItem("theme") === "dark";
 
 function setInitialTheme() {
+    // Добавляем класс темы в body
     document.body.classList.add(isDarkMode ? "dark" : "light");
+    // Устанавливаем цвет обводки для элементов
     setPathStrokeColors(isDarkMode ? "#eaeaeb" : "#1a1a1a");
 }
 
 function setPathStrokeColors(color) {
+    // Устанавливаем цвет обводки для всех элементов
     document.querySelectorAll(".Text path, .ContactsLogoText path, .ButtonToStart path").forEach(path => {
-        path.style.stroke = color;
+        path.setAttribute('stroke', color);
     });
 }
 
@@ -26,13 +29,14 @@ darkModeButton.addEventListener('click', () => {
     const newTheme = isDarkMode ? "light" : "dark";
     const fillColor = isDarkMode ? "#1a1a1a" : "#eaeaeb";
     const strokeColor = isDarkMode ? "#1a1a1a" : "#eaeaeb";
+    const sunColor = isDarkMode ? "#eaeaeb" : "#1a1a1a";
     const newPath = isDarkMode ? sunPath : moonPath;
 
     timeline
         .add({
             targets: ".sun",
             d: [{ value: newPath }],
-            fill: strokeColor
+            fill: sunColor
         })
         .add({
             targets: ".ray",
@@ -44,7 +48,7 @@ darkModeButton.addEventListener('click', () => {
         }, 0)
         .add({
             targets: ".Text path, .ContactsLogoText path, .ButtonToStart path",
-            stroke: strokeColor
+            stroke: strokeColor,
         }, 0);
 
     document.body.classList.toggle("dark", !isDarkMode);
