@@ -696,11 +696,11 @@ main{
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .CursorContainer{
     display: none !important;
   }
-  
+
   body, 
   html{
     overflow-x: hidden !important;

@@ -168,7 +168,7 @@ header .HeaderLine {
   border-radius: 5px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   #header {
     width: 100vw;
   }
@@ -871,7 +871,7 @@ main #darkMode {
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .CursorContainer {
     display: none !important;
   }
@@ -1359,7 +1359,7 @@ main #darkMode {
   padding: 10px 15px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .ContactMeSection {
     padding-bottom: 2% !important;
     height: 98vh !important;
