@@ -10,21 +10,28 @@ let aboutBackgroundText = document.querySelector("#FixedText");
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Horizontal scroll animation for the Portfolio section
-if (horizontalScrollerItems.length) {
-  gsap.to(horizontalScrollerItems, {
-    xPercent: -110 * (horizontalScrollerItems.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".horizontalScroller",
-      pin: true,
-      scrub: 1,
-      end: () =>
-        "+=" + document.querySelector(".horizontalScroller__item").offsetWidth,
-    },
-  });
+function isTouchDevice() {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 }
 
+if (isTouchDevice){
+  // Horizontal scroll animation for the Portfolio section
+
+  if (horizontalScrollerItems.length) {
+    gsap.to(horizontalScrollerItems, {
+      xPercent: -110 * (horizontalScrollerItems.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".horizontalScroller",
+        pin: true,
+        scrub: 1,
+        end: () =>
+          "+=" + document.querySelector(".horizontalScroller__item").offsetWidth,
+      },
+    });
+  }
+}
+  
 // Function to create scroll triggers
 function createScrollTrigger(element, xPercent, trigger, start, end) {
   if (element) {
@@ -81,21 +88,28 @@ function updateLetterSpacing(element, divisor, offset) {
 updateLetterSpacing(portfolioText, 900, -3);
 updateLetterSpacing(aboutBackgroundText, -800, 2);
 
-// Animation and scroll trigger for FixedText
-if (aboutBackgroundText) {
-  gsap.to(aboutBackgroundText, {
-    y: 30,
-    duration: 1,
-    scrollTrigger: {
-      trigger: aboutBackgroundText,
-      start: "top top",
-      end: "bottom -50%", // Pin for longer
-      scrub: true,
-      pin: true, // Pin only FixedText
-    },
-  });
+
+function AboutTextSpacing (top, bottom){
+  if (aboutBackgroundText) {
+    gsap.to(aboutBackgroundText, {
+      y: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: aboutBackgroundText,
+        start: `top ${top}`,
+        end: `bottom ${bottom}`, // Pin for longer
+        scrub: true,
+        pin: true, // Pin only FixedText
+      },
+    });
+  }
 }
 
+if (isTouchDevice()) {
+  AboutTextSpacing("40%", "-25%"); //for mobile
+} else {
+  AboutTextSpacing("top", "-80%"); //for pc
+}
 // Function to create width animation scroll triggers
 function createWidthScrollTrigger(element, widthChange, trigger, start, end) {
   if (element) {

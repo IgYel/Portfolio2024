@@ -11,6 +11,7 @@
     align-items: center;
     pointer-events: none;
 
+    mix-blend-mode: difference;
     #Cursor {
         width: 10vh;
         height: 10vh;
@@ -22,31 +23,19 @@
 
         overflow: hidden;
         path{
-            fill: var(--color);
-        }
-        #SloganCz{
-            font-size: 4vh;
-            width: 30vw;
-            height: 30vh;
-            padding-top: 10vh;
-            padding-right: 2.5vw;
-            text-align: right;
-            position: fixed;
-            color: var(--colorR);
-            #SloganUnderlined{
-                letter-spacing: -0.4vw;
-            }
+            fill: rgb(255, 255, 255);
         }
     }
     .Tail{
         width: 10vh;
         height: 10vh;
         position: absolute;
-        background-color: var(--color);
         border-radius: 10vh;
         animation: Extinct 0.1s ease-in forwards;
         transform: translateX(-0.55vw) translateY(-2vh) scale(0.93);
         z-index: -10;
+
+        background-color: rgb(255, 255, 255);
     }
 }
 
@@ -64,7 +53,7 @@
 
 .SloganContainer{
     height: fit-content;
-    font-size: 4vh;
+    font-size: 35px;
     color: var(--color);
     text-align: right;
     width: 102.5%;
@@ -93,20 +82,4 @@
             }
         }
     }
-}
-
-.Visibility{
-    display: none;
-}
-
-.BlendCursor{
-    #Cursor{
-        path{
-            fill: rgb(255, 255, 255);
-        }
-    }
-    .Tail{
-        background-color: rgb(255, 255, 255);
-    };
-    mix-blend-mode: difference;
 }

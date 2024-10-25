@@ -38,3 +38,21 @@ header{
         border-radius: 5px;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    #header{
+      width: 100vw;
+      .Container{
+          a{
+              div{
+                  font-size: 2vh;
+                  letter-spacing: 0.3vw !important;
+                  :hover{
+                      margin-top: 0 !important;
+                      color: var(--color) !important;
+                    }
+                }
+            }
+        }
+    }
+}

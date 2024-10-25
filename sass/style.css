@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Spirax&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Maname&family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Style+Script&display=swap");
 @font-face {
   font-family: "Sansation";
   src: url("../font/Sansation_Regular.ttf"), url("../font/Sansation_Bold_Italic.ttf"), url("../font/Sansation_Italic.ttf"), url("../font/Sansation_Light.ttf"), url("../font/Sansation_Light_Italic.ttf"), url("../font/Sansation_Bold.ttf");
@@ -64,6 +66,18 @@
   100% {
     transform: translateX(1px);
     stroke-dashoffset: 0px;
+  }
+}
+@keyframes DisplayNone {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
   }
 }
 :root {
@@ -154,6 +168,19 @@ header .HeaderLine {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 1000px) {
+  #header {
+    width: 100vw;
+  }
+  #header .Container a div {
+    font-size: 2vh;
+    letter-spacing: 0.3vw !important;
+  }
+  #header .Container a div :hover {
+    margin-top: 0 !important;
+    color: var(--color) !important;
+  }
+}
 main #darkMode {
   position: absolute;
   height: 6%;
@@ -206,8 +233,6 @@ main #darkMode {
 .horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item {
   overflow: hidden;
   position: relative;
-  color: var(--color);
-  text-shadow: none;
   width: 15%;
   height: 35vw;
   margin-right: 10%;
@@ -215,37 +240,42 @@ main #darkMode {
   border-radius: 20% 10% 20% 10%;
   padding: 1%;
   color: var(--color);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(1vw);
+          backdrop-filter: blur(1vw);
   font-size: 1.5vw;
+  color: var(--color);
+  text-shadow: none;
 }
 .horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .ScrollTitle {
   font-size: 2.5vw;
+  width: 100%;
 }
 .horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .ScrollLogo {
-  width: 5vw;
-  height: 5vw;
+  width: 4vw;
+  height: 4vw;
   filter: drop-shadow(0.2vw 0.2vw 0.2vh #1a1a1a);
 }
 .horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .TextContainer {
   width: 100%;
-  height: 70%;
+  height: 80%;
   overflow: hidden;
   position: relative;
 }
 .horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .TextContainer .ScrollerText {
-  font-size: 1.45vw;
   letter-spacing: -0.4vh;
   position: absolute;
-  top: 0vh;
-  transition: ease-in-out 0.5s;
+  left: 0;
+  transition: 0.5s ease-in-out;
+  width: 200%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
 }
-.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .TextContainer .ScrollerText .Line {
+.horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .TextContainer .ScrollerText .innerText {
   width: 100%;
-  height: 0.3vh;
-  background-color: var(--color);
-  border-radius: 2vw;
-  margin: 3% 0;
+  height: 100%;
+  font-size: 1.4vw;
 }
 .horizontalScroller__scroll .horizontalScroller__images .horizontalScroller__item .BackImg {
   width: 10.5vw;
@@ -287,6 +317,37 @@ main #darkMode {
   border-radius: 10% 20% 10% 20%;
   margin-top: 2%;
 }
+.horizontalScroller__scroll .horizontalScroller__images #finalElement #Text {
+  width: 110%;
+  height: 100%;
+  align-content: center;
+  margin-left: -5%;
+}
+.horizontalScroller__scroll .horizontalScroller__images #finalElement .floatingElement {
+  position: absolute;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.horizontalScroller__scroll .horizontalScroller__images #finalElement .floatingElement path {
+  fill: var(--color);
+}
+.horizontalScroller__scroll .horizontalScroller__images #finalElement #Text path {
+  fill: var(--color);
+}
+.horizontalScroller__scroll .horizontalScroller__images #finalElement #firstElement {
+  top: 15%;
+  left: 10%;
+  scale: 1.7;
+  rotate: 5deg;
+}
+.horizontalScroller__scroll .horizontalScroller__images #finalElement #secondElement {
+  bottom: 20%;
+  right: 10%;
+  rotate: -8deg;
+  scale: 2.6;
+}
 
 .contact {
   height: 100vh;
@@ -298,7 +359,7 @@ main #darkMode {
   height: 55px;
   background-color: var(--Red);
   position: relative;
-  top: -100px;
+  top: -25px;
   left: 0;
 }
 .EndLine .LineUp {
@@ -377,6 +438,14 @@ main #darkMode {
   flex-direction: column;
   justify-content: space-between;
 }
+.MainPage .MainPhoto {
+  transform: scale(-1, 1);
+  position: absolute;
+  right: 0%;
+  width: 35%;
+  height: 100%;
+  width: -100%;
+}
 
 .SocialMedia {
   width: 100vw;
@@ -385,6 +454,9 @@ main #darkMode {
   flex-direction: column;
   justify-content: end;
   margin-bottom: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .SocialMedia .Social {
   display: flex;
@@ -649,14 +721,34 @@ main #darkMode {
   font-size: 1.5vw;
   color: #fafafa;
   background-color: var(--bgTransparent);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(1vw);
+          backdrop-filter: blur(1vw);
   text-shadow: 0 0 10px #fafafa, 0 0 20px #fafafa;
-  transition: 2s;
+  transition: 1s ease;
+  align-content: center;
+  padding: 1% 1% 5%;
+}
+.AboutMeSection .AboutBackgroundText .AboutTextCard .TitleAboutText {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-content: center;
+  text-align: center;
+  font-size: 3vw;
+}
+.AboutMeSection .AboutBackgroundText .AboutTextCard .star {
+  display: inline-block;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-content: center;
+  scale: 0.5;
+  margin-bottom: 1%;
+}
+.AboutMeSection .AboutBackgroundText .AboutTextCard .star path {
+  fill: #fafafa;
 }
 .AboutMeSection .AboutBackgroundText #WhereFromText {
   border-radius: 7rem 7rem 2rem 2rem;
-  padding: 10vw 1vw 3rem 1vw;
   position: absolute;
   z-index: 4;
   top: 10rem;
@@ -665,15 +757,21 @@ main #darkMode {
 .AboutMeSection .AboutBackgroundText #MyLifeText {
   border-radius: 7rem 7rem 2rem 2rem;
   position: absolute;
-  padding: 10vw 1vw 3vw 1vw;
   z-index: 4;
   right: 5rem;
   top: 50vh;
 }
+.AboutMeSection .AboutBackgroundText #MyLifeText .mono {
+  font-family: "Major Mono Display", monospace;
+}
+.AboutMeSection .AboutBackgroundText #MyLifeText .style {
+  font-family: "Style Script";
+  letter-spacing: 0.15vw;
+  font-size: 2.3vw;
+}
 .AboutMeSection .AboutBackgroundText #MyAimsText {
   border-radius: 2rem 2rem 7rem 7rem;
   position: absolute;
-  padding: 3vw 1vw 10vw 1vw;
   z-index: 4;
   left: 8rem;
   bottom: 60vh;
@@ -681,7 +779,6 @@ main #darkMode {
 .AboutMeSection .AboutBackgroundText #MyBenefitsText {
   border-radius: 2rem 2rem 7rem 7rem;
   position: absolute;
-  padding: 3vw 1vw 10vw 1vw;
   z-index: 4;
   right: 12rem;
   bottom: 20vh;
@@ -774,12 +871,163 @@ main #darkMode {
   display: none;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .CursorContainer {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body,
+  html {
+    overflow-x: hidden !important;
+  }
+  .Text {
+    margin: 7.5vh 5vw !important;
+    width: 90vw !important;
+    height: 20vh !important;
+  }
+  main .pin-spacer:nth-of-type(3) {
+    position: absolute !important;
+  }
+  main .MainPhoto {
+    display: none;
+  }
+  main .SocialMedia {
+    margin: 0;
+    width: 50% !important;
+    position: absolute !important;
+    bottom: 3vh !important;
+    left: 5vw;
+  }
+  main .SocialMedia .Social {
+    padding: 0;
+    flex-direction: column !important;
+  }
+  main .MainPage {
+    height: 105vh;
+  }
+  main #darkMode {
+    width: 10% !important;
+    right: 2%;
+  }
+  main .container {
+    display: none;
+  }
+  main .horizontalScroller {
+    height: 50vh;
+    width: 100vw;
+    z-index: 100 !important;
+    left: 0%;
+  }
+  main .horizontalScroller .horizontalScroller__images {
+    margin: 0;
+    padding: 0;
+    margin-left: 0%;
+    transition: 0.2s ease;
+    width: 300% !important;
+  }
+  main .mobileHScroll {
+    top: 30% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  main .mobileHScroll .wrapper {
+    width: 100vw;
+    height: 100%;
+    perspective: 500px;
+  }
+  main .mobileHScroll .horizontalScroller__item {
+    border-radius: 15px !important;
+    width: 75vw !important;
+    margin: 0 12.5vw !important;
+    height: 100% !important;
+    transform: rotateY(0deg) rotateX(0deg);
+    transition: 0.2s ease;
+    z-index: 100 !important;
+  }
+  main .mobileHScroll .horizontalScroller__item .innerText {
+    letter-spacing: -2px;
+    font-size: 2vh !important;
+    text-align: justify;
+    padding: 0 2%;
+  }
+  main .mobileHScroll .horizontalScroller__item .ScrollTitle {
+    font-size: 3vh !important;
+    width: 100% !important;
+    text-align: center;
+    align-content: center;
+  }
+  main .mobileHScroll .horizontalScroller__item .ScrollLogo {
+    margin: 2% 0 0 2%;
+    position: absolute;
+  }
+  main .mobileHScroll .horizontalScroller__item .switchLanguageInScroller {
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+  }
+  main .mobileHScroll .horizontalScroller__item .switchLanguageInScroller .switchBody {
+    background-color: #1a1a1a;
+    width: 60px;
+    height: 100%;
+    border-radius: 100vw;
+    position: relative;
+  }
+  main .mobileHScroll .horizontalScroller__item .switchLanguageInScroller .switchBody .switchbutton {
+    width: 30px;
+    height: 30px;
+    margin: 2.5px 2.5px;
+    background-color: #fafafa;
+    border-radius: 100%;
+    text-align: center;
+    align-content: center;
+    color: #1a1a1a;
+    font-size: 20px;
+    position: absolute;
+    transition: 0.25s ease-in-out;
+  }
+  main .AboutMeSection {
+    height: 100vh !important;
+  }
+  main .AboutMeSection .AboutTextCard {
+    border-radius: 5vw !important;
+  }
+  main .AboutMeSection .AboutTextCard .star {
+    scale: 0.3 !important;
+  }
+  main .AboutMeSection #WhereFromText {
+    top: 7% !important;
+  }
+  main .AboutMeSection #MyAimsText {
+    top: 30% !important;
+    left: 50% !important;
+  }
+  main .AboutMeSection #MyLifeText {
+    left: 15% !important;
+    top: 60% !important;
+  }
+  main .AboutMeSection #MyBenefitsText {
+    right: 10% !important;
+    bottom: 5% !important;
+  }
+  main .AboutMeSection #FixedText {
+    text-wrap: nowrap;
+    font-size: 45px !important;
+  }
+}
 .ContactMeSection {
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-color: var(--bg);
   padding: 5vh 3%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .ContactMeSection .SVGContainer {
   display: flex;
@@ -804,7 +1052,10 @@ main #darkMode {
   transition: 0.3s ease-in-out;
 }
 .ContactMeSection .SVGContainer .ButtonToStart path {
-  transition: d 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.ContactMeSection .galleryWrapper {
+  display: none !important;
 }
 .ContactMeSection .Credits {
   display: flex;
@@ -825,7 +1076,7 @@ main #darkMode {
 }
 .ContactMeSection .EmailContainer {
   width: 30%;
-  height: 12%;
+  height: 18%;
   position: relative;
   border-radius: 50vw;
   border: 0.2vw solid;
@@ -860,14 +1111,20 @@ main #darkMode {
   border-radius: 100%;
   transition: 0.4s ease;
 }
-.ContactMeSection .SocialContainer {
-  height: 28vh;
-  width: 0;
+
+.secondContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.secondContainer .SocialContainer {
+  height: auto;
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: end;
 }
-.ContactMeSection .SocialContainer .SocialContact {
+.secondContainer .SocialContainer .SocialContact {
   display: flex;
   padding: 10px 15px;
   justify-content: space-between;
@@ -876,254 +1133,293 @@ main #darkMode {
   margin-left: -0.8vw;
   z-index: 50;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram {
+.secondContainer .SocialContainer .SocialContact #instagramContact {
   height: 40px;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #i {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #i {
   transform: rotateX(90deg) translateZ(-3.5px);
   transition: ease 1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #n {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #n {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.05s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #s {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #s {
   transform: rotateX(90deg) translateZ(-3.5px);
   transition: ease 1s 0.1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #t {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #t {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.15s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #a {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #a {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.2s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #g {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #g {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.25s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #r {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #r {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.3s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #a1 {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #a1 {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.35s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram:hover #m {
+.secondContainer .SocialContainer .SocialContact #instagramContact:hover #m {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.4s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #i {
+.secondContainer .SocialContainer .SocialContact #instagramContact #i {
   transition: ease 1s 0.4s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #n {
+.secondContainer .SocialContainer .SocialContact #instagramContact #n {
   transition: ease 1s 0.35s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #s {
+.secondContainer .SocialContainer .SocialContact #instagramContact #s {
   transition: ease 1s 0.3s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #t {
+.secondContainer .SocialContainer .SocialContact #instagramContact #t {
   transition: ease 1s 0.25s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #a {
+.secondContainer .SocialContainer .SocialContact #instagramContact #a {
   transition: ease 1s 0.2s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #g {
+.secondContainer .SocialContainer .SocialContact #instagramContact #g {
   transition: ease 1s 0.15s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #r {
+.secondContainer .SocialContainer .SocialContact #instagramContact #r {
   transition: ease 1s 0.1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #a1 {
+.secondContainer .SocialContainer .SocialContact #instagramContact #a1 {
   transition: ease 1s 0.05s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram #m {
+.secondContainer .SocialContainer .SocialContact #instagramContact #m {
   transition: ease 1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram div {
+.secondContainer .SocialContainer .SocialContact #instagramContact div {
   background-color: var(--bg);
   position: relative;
   perspective: 20000px;
   transform-style: preserve-3d;
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram div .normalfont {
+.secondContainer .SocialContainer .SocialContact #instagramContact div .normalfont {
   transform: rotateX(0deg) translateZ(20px);
 }
-.ContactMeSection .SocialContainer .SocialContact #instagram div .cursivefont {
+.secondContainer .SocialContainer .SocialContact #instagramContact div .cursivefont {
   font-family: "Spirax";
   font-weight: 600;
   transform: rotateX(-90deg) translateZ(20px);
 }
-.ContactMeSection .SocialContainer .SocialContact #github {
+.secondContainer .SocialContainer .SocialContact #githubContact {
   height: 40px;
 }
-.ContactMeSection .SocialContainer .SocialContact #github:hover #g1 {
+.secondContainer .SocialContainer .SocialContact #githubContact:hover #g1 {
   transform: rotateX(90deg) translateZ(-3.5px);
   transition: ease 1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github:hover #i1 {
+.secondContainer .SocialContainer .SocialContact #githubContact:hover #i1 {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.05s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github:hover #t1 {
+.secondContainer .SocialContainer .SocialContact #githubContact:hover #t1 {
   transform: rotateX(90deg) translateZ(-3.5px);
   transition: ease 1s 0.1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github:hover #h {
+.secondContainer .SocialContainer .SocialContact #githubContact:hover #h {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.15s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github:hover #u {
+.secondContainer .SocialContainer .SocialContact #githubContact:hover #u {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.2s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github:hover #b {
+.secondContainer .SocialContainer .SocialContact #githubContact:hover #b {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.25s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github #g1 {
+.secondContainer .SocialContainer .SocialContact #githubContact #g1 {
   transition: ease 1s 0.25s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github #i1 {
+.secondContainer .SocialContainer .SocialContact #githubContact #i1 {
   transition: ease 1s 0.2s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github #t1 {
+.secondContainer .SocialContainer .SocialContact #githubContact #t1 {
   transition: ease 1s 0.15s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github #h {
+.secondContainer .SocialContainer .SocialContact #githubContact #h {
   transition: ease 1s 0.1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github #u {
+.secondContainer .SocialContainer .SocialContact #githubContact #u {
   transition: ease 1s 0.05s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github #b {
+.secondContainer .SocialContainer .SocialContact #githubContact #b {
   transition: ease 1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #github div {
+.secondContainer .SocialContainer .SocialContact #githubContact div {
   background-color: var(--bg);
   position: relative;
   perspective: 20000px;
   transform-style: preserve-3d;
 }
-.ContactMeSection .SocialContainer .SocialContact #github div .normalfont {
+.secondContainer .SocialContainer .SocialContact #githubContact div .normalfont {
   transform: rotateX(0deg) translateZ(20px);
 }
-.ContactMeSection .SocialContainer .SocialContact #github div .cursivefont {
+.secondContainer .SocialContainer .SocialContact #githubContact div .cursivefont {
   font-family: "Spirax";
   font-weight: 600;
   transform: rotateX(-90deg) translateZ(20px);
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook {
+.secondContainer .SocialContainer .SocialContact #facebookContact {
   height: 40px;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #f {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #f {
   transform: rotateX(90deg) translateZ(-3.5px);
   transition: ease 1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #a2 {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #a2 {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.05s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #c {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #c {
   transform: rotateX(90deg) translateZ(-3.5px);
   transition: ease 1s 0.1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #e {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #e {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.15s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #b1 {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #b1 {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.2s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #o {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #o {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.25s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #o1 {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #o1 {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.3s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook:hover #k {
+.secondContainer .SocialContainer .SocialContact #facebookContact:hover #k {
   transform: rotateX(90deg) translateZ(-2.5px);
   transition: ease 1s 0.35s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #f {
+.secondContainer .SocialContainer .SocialContact #facebookContact #f {
   transition: ease 1s 0.35s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #a2 {
+.secondContainer .SocialContainer .SocialContact #facebookContact #a2 {
   transition: ease 1s 0.3s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #c {
+.secondContainer .SocialContainer .SocialContact #facebookContact #c {
   transition: ease 1s 0.25s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #e {
+.secondContainer .SocialContainer .SocialContact #facebookContact #e {
   transition: ease 1s 0.2s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #b1 {
+.secondContainer .SocialContainer .SocialContact #facebookContact #b1 {
   transition: ease 1s 0.15s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #o {
+.secondContainer .SocialContainer .SocialContact #facebookContact #o {
   transition: ease 1s 0.1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #o1 {
+.secondContainer .SocialContainer .SocialContact #facebookContact #o1 {
   transition: ease 1s 0.05s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook #k {
+.secondContainer .SocialContainer .SocialContact #facebookContact #k {
   transition: ease 1s;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook div {
+.secondContainer .SocialContainer .SocialContact #facebookContact div {
   background-color: var(--bg);
   position: relative;
   perspective: 20000px;
   transform-style: preserve-3d;
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook div .normalfont {
+.secondContainer .SocialContainer .SocialContact #facebookContact div .normalfont {
   transform: rotateX(0deg) translateZ(20px);
 }
-.ContactMeSection .SocialContainer .SocialContact #facebook div .cursivefont {
+.secondContainer .SocialContainer .SocialContact #facebookContact div .cursivefont {
   font-family: "Spirax";
   font-weight: 600;
   transform: rotateX(-90deg) translateZ(20px);
 }
-.ContactMeSection .SocialContainer .SocialContact div {
+.secondContainer .SocialContainer .SocialContact div {
   margin-right: 25px;
   display: flex;
 }
-.ContactMeSection .SocialContainer .SocialContact div span {
+.secondContainer .SocialContainer .SocialContact div span {
   position: absolute;
   font-weight: 500;
   margin: 0;
   font-size: 30px;
 }
-
-.SloganContainer {
+.secondContainer .SloganContainer {
   width: 100%;
   height: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.SloganContainer .Cursor {
-  width: 15%;
-  height: 30%;
-  background-color: #ebebeb;
-  position: absolute;
-  border-radius: 100%;
-  overflow: hidden;
-  border: 0.2vw solid #1a1a1a;
-  cursor: none;
-}
-.SloganContainer .Cursor .Slogan {
-  width: 15%;
-  height: 15%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  padding: 10px 15px;
 }
 
+@media screen and (max-width: 1000px) {
+  .ContactMeSection {
+    padding-bottom: 2% !important;
+    height: 98vh !important;
+  }
+  .ContactMeSection .Credits span {
+    letter-spacing: -0.2vw;
+  }
+  .ContactMeSection .galleryWrapper {
+    width: 100vw;
+    height: 55vh;
+    margin-left: -3vw;
+    display: block !important;
+  }
+  .ContactMeSection .galleryWrapper .ContactGallery {
+    height: 100%;
+    width: 300vw;
+    margin: 0;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0%;
+  }
+  .ContactMeSection .galleryWrapper .ContactGallery .galleryElement {
+    height: 100%;
+    width: 100vw;
+    perspective: 400px;
+  }
+  .ContactMeSection .galleryWrapper .ContactGallery .galleryElement .galleryImage {
+    height: 100%;
+    width: 75vw;
+    margin: 0 12.5vw;
+    border-radius: 50px;
+    background-color: var(--color);
+    transition: 0.1s ease;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .ContactMeSection .EmailContainer {
+    width: 65vw !important;
+    height: 7vh !important;
+    margin-top: 5vh !important;
+  }
+  .ContactMeSection .EmailContainer .email {
+    font-size: 15px !important;
+  }
+  .ContactMeSection .SocialContainer {
+    display: none !important;
+  }
+  .ContactMeSection .SloganContainer {
+    font-size: 25px !important;
+    padding: 0 !important;
+  }
+  .ContactMeSection .ButtonFill {
+    width: 250% !important;
+    left: -150% !important;
+  }
+}
 body.light {
   --bg: var(--light-bg);
   --bgHeader: #ecececa8;
@@ -1441,6 +1737,7 @@ body.dark {
   align-content: center;
   align-items: center;
   pointer-events: none;
+  mix-blend-mode: difference;
 }
 .CursorContainer #Cursor {
   width: 10vh;
@@ -1453,30 +1750,17 @@ body.dark {
   overflow: hidden;
 }
 .CursorContainer #Cursor path {
-  fill: var(--color);
-}
-.CursorContainer #Cursor #SloganCz {
-  font-size: 4vh;
-  width: 30vw;
-  height: 30vh;
-  padding-top: 10vh;
-  padding-right: 2.5vw;
-  text-align: right;
-  position: fixed;
-  color: var(--colorR);
-}
-.CursorContainer #Cursor #SloganCz #SloganUnderlined {
-  letter-spacing: -0.4vw;
+  fill: rgb(255, 255, 255);
 }
 .CursorContainer .Tail {
   width: 10vh;
   height: 10vh;
   position: absolute;
-  background-color: var(--color);
   border-radius: 10vh;
   animation: Extinct 0.1s ease-in forwards;
   transform: translateX(-0.55vw) translateY(-2vh) scale(0.93);
   z-index: -10;
+  background-color: rgb(255, 255, 255);
 }
 
 @keyframes Extinct {
@@ -1493,7 +1777,7 @@ body.dark {
 .SloganContainer {
   height: -moz-fit-content;
   height: fit-content;
-  font-size: 4vh;
+  font-size: 35px;
   color: var(--color);
   text-align: right;
   width: 102.5%;
@@ -1522,20 +1806,6 @@ body.dark {
 .SloganContainer #SloganUnderlined:hover .SloganLine {
   width: 101%;
   transition: 0.7s ease;
-}
-
-.Visibility {
-  display: none;
-}
-
-.BlendCursor {
-  mix-blend-mode: difference;
-}
-.BlendCursor #Cursor path {
-  fill: rgb(255, 255, 255);
-}
-.BlendCursor .Tail {
-  background-color: rgb(255, 255, 255);
 }
 
 html {
@@ -1577,17 +1847,4 @@ html ::-webkit-scrollbar-thumb {
   background-color: #1a1a1a;
   z-index: 999;
   animation: DisplayNone 1s ease 0.4s forwards;
-}
-
-@keyframes DisplayNone {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
 }/*# sourceMappingURL=style.css.map */

@@ -21,28 +21,35 @@ document.body.addEventListener("mousemove", (event) => {
     targetY = event.clientY;
 });
 
-function MoveText (TextContainerIndex, ScrollerTextIndex, topIndex){   
+function MoveText(TextContainerIndex, ScrollerTextIndex){
     TextContainerIndex.addEventListener("mousemove", (event) => {
-        const cursorYvh = (event.clientY / window.innerHeight) * 100;
+        const containerLeft = TextContainerIndex.getBoundingClientRect().left;  // Абсолютная координата левого края элемента
+        const containerRight = TextContainerIndex.getBoundingClientRect().right;  // Абсолютная координата правого края элемента
+        const containerWidth = containerRight - containerLeft;  // Рассчитываем ширину элемента
+        const cursorXPosition = event.clientX;  // Положение курсора относительно окна
+
+        console.log(cursorXPosition);
         
         TextContainerIndex.onmouseleave = () => {
-            if(cursorYvh > 60){
-                ScrollerTextIndex.style.top = `0vh`;
+            const threshold = containerLeft + (containerWidth * 0.6);  // 60% от абсолютной длины элемента
+            
+            if(cursorXPosition > threshold){  // Если курсор находится дальше 60% абсолютной длины элемента
+                ScrollerTextIndex.style.left = `0%`;  // Ставим элемент на начальную позицию
             } else {
-                ScrollerTextIndex.style.top = `-${topIndex}%`;
+                ScrollerTextIndex.style.left = `-${100}%`;  // Смещаем элемент влево на 115%
             }
-        }
+        };
     });
 }
 
-MoveText(TextContainer1, ScrollerText1, 108);
-MoveText(TextContainer2, ScrollerText2, 110);
+MoveText(TextContainer2, ScrollerText2);
+MoveText(TextContainer1, ScrollerText1);
 
 firstScrollItem.onclick = () => {
     window.open('https://igyel.github.io/MacaroonShop/', '_blank');
 };
 secondScrollItem.onclick = () => {
-    window.open('https://igyel.github.io/MacaroonShop/', '_blank');
+    window.open('https://igyel.github.io/Customs--Final-FE-Project-/', '_blank');
 };
 
 const SloganCz = document.querySelector('#SloganCz');
@@ -68,23 +75,6 @@ function moveCursor() {
     // Set cursor positions with offset in vw and vh
     Cursor.style.left = `calc(${cursorXvw}vw - ${offsetXvw}vw)`;
     Cursor.style.top = `calc(${cursorYvh}vh - ${offsetYvh}vh)`;
-
-    if (screenWidth > 800 && screenWidth < 1100){
-        SloganCz.style.left = `calc(${100 - cursorXvw}vw - ${25}vw)`;
-        SloganCz.style.top = `calc(${100 - cursorYvh}vh - ${12}vh)`;
-    }
-    else if (screenWidth > 1100 && screenWidth < 1900){
-        SloganCz.style.left = `calc(${100 - cursorXvw}vw - ${27}vw)`;
-        SloganCz.style.top = `calc(${100 - cursorYvh}vh - ${18}vh)`;
-    } 
-    else if (screenWidth > 1900 && screenWidth < 2800){
-        SloganCz.style.left = `calc(${100 - cursorXvw}vw - ${29}vw)`;
-        SloganCz.style.top = `calc(${100 - cursorYvh}vh - ${19}vh)`;
-    } 
-    else if (screenWidth > 2800){
-        SloganCz.style.left = `calc(${100 - cursorXvw}vw - ${30}vw)`;
-        SloganCz.style.top = `calc(${100 - cursorYvh}vh - ${22}vh)`;
-    }
     
     requestAnimationFrame(moveCursor);
 }
@@ -120,7 +110,7 @@ MakeAButton(".AboutTextCard", 1.6);
 MakeAButton(".SVGContainer", 1.5);
 MakeAButton(".Credits", 0.8);
 MakeAButton(".SocialContact", 0.7);
-MakeAButton("#SloganEng", 1.3);
+MakeAButton("#SloganEng", 1);
 
 const CursorContainer = document.querySelector('.CursorContainer');
 let hoveredEmail = false;
@@ -192,16 +182,4 @@ SloganUnderlined.onmouseover = () =>{
 }
 SloganUnderlined.onmouseleave = () =>{
     SloganUnderlined.classList.remove('Lined');
-}
-
-CursorContainer.classList.add('BlendCursor');
-SloganCz.classList.add('Visibility');
-
-SloganContainer.onmouseover = () =>{
-    CursorContainer.classList.remove('BlendCursor');
-    SloganCz.classList.remove('Visibility');
-}
-SloganContainer.onmouseleave = () =>{
-    CursorContainer.classList.add('BlendCursor');
-    SloganCz.classList.add('Visibility');
 }
