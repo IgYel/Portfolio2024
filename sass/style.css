@@ -871,12 +871,10 @@ main #darkMode {
   display: none;
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media screen and (max-width: 1000px) {
   .CursorContainer {
     display: none !important;
   }
-}
-@media screen and (max-width: 1000px) {
   body,
   html {
     overflow-x: hidden !important;
