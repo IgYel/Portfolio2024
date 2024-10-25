@@ -695,7 +695,10 @@ main{
 .NotVisible{
   display: none;
 }
-@media (hover: none) and (pointer: coarse) {
+@media screen and(max-width: 1500px) {
+  *{
+    cursor: default;
+  }
   .CursorContainer{
     display: none !important;
   }
