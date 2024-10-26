@@ -262,15 +262,27 @@ main{
   flex-direction: column;
   justify-content: space-between;
   .MainPhoto{
-    transform: scale(-1, 1); // mirroring
+    // transform: scale(-1, 1); // mirroring
 
     position: absolute;
     right: 0%;
     width: 35%;
     height: 100%;
     width: -100%;
+    object-fit: contain;
   }
 }
+.WipeMainPhoto{
+  margin-right: -50%;
+}
+
+.WipeSocial{
+  opacity: 0;
+}
+.WipeScroll{
+  opacity: 0;
+}
+
 .SocialMedia{
   width: 100vw;
   height: 100vh;

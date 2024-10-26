@@ -80,6 +80,19 @@
     display: none;
   }
 }
+@keyframes wipeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    gap: 0;
+    margin: 0;
+  }
+}
+@keyframes wipeInOpacityOnly {
+  to {
+    opacity: 1;
+  }
+}
 :root {
   --White: #ececec;
   --Black: #1a1a1a;
@@ -125,7 +138,7 @@ button {
 
 header {
   transition: 0.25s;
-  z-index: 99;
+  z-index: 999;
   width: 100%;
   position: fixed;
   background-color: var(--bgHeader);
@@ -181,6 +194,10 @@ header .HeaderLine {
     color: var(--color) !important;
   }
 }
+.WipeHeader {
+  margin-top: -10%;
+}
+
 main #darkMode {
   position: absolute;
   height: 6%;
@@ -439,12 +456,25 @@ main #darkMode {
   justify-content: space-between;
 }
 .MainPage .MainPhoto {
-  transform: scale(-1, 1);
   position: absolute;
   right: 0%;
   width: 35%;
   height: 100%;
   width: -100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.WipeMainPhoto {
+  margin-right: -50%;
+}
+
+.WipeSocial {
+  opacity: 0;
+}
+
+.WipeScroll {
+  opacity: 0;
 }
 
 .SocialMedia {
@@ -1827,7 +1857,7 @@ html ::-webkit-scrollbar-thumb {
 }
 
 * {
-  cursor: none;
+  cursor: none !important;
 }
 
 ::-moz-selection {

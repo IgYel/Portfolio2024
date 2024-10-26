@@ -1,6 +1,6 @@
 header{
     transition: .25s;
-    z-index: 99;
+    z-index: 999;
     width: 100%;
     position: fixed;
     background-color: var(--bgHeader);
@@ -55,4 +55,8 @@ header{
             }
         }
     }
+}
+
+.WipeHeader{
+    margin-top: -10%;
 }
