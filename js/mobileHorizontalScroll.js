@@ -158,3 +158,21 @@ const switchLanguageElement = (elementID) => {
 
 switchLanguageElement('#firstScrollItem');
 switchLanguageElement('#SecondScrollItem');
+
+//links for mobile scroller
+
+if(isTouchDevice()){
+    const firstScrollItem = document.querySelector('#firstScrollItem');
+    const SecondScrollItem = document.querySelector('#SecondScrollItem');
+    
+    const makeLink = (container, link) =>{
+        container.querySelector('.ScrollTitle').onclick = () =>{
+            window.open(link, "_blank");        
+        }
+        container.querySelector('.TextContainer').onclick = () =>{
+            window.open(link, "_blank");        
+        }
+    }
+    makeLink(firstScrollItem, 'https://igyel.github.io/MacaroonShop/')
+    makeLink(SecondScrollItem, 'https://igyel.github.io/Customs--Final-FE-Project-/')
+}

@@ -365,6 +365,14 @@ main #darkMode {
   rotate: -8deg;
   scale: 2.6;
 }
+.horizontalScroller__scroll .horizontalScroller__images #finalElement #ContactLink {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .contact {
   height: 100vh;
