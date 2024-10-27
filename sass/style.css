@@ -942,9 +942,10 @@ main #darkMode {
     display: none;
   }
   main .horizontalScroller {
-    height: 50vh;
+    height: 45vh;
     width: 100vw;
     z-index: 100 !important;
+    position: relative !important;
     left: 0%;
   }
   main .horizontalScroller .horizontalScroller__images {
@@ -955,7 +956,7 @@ main #darkMode {
     width: 300% !important;
   }
   main .mobileHScroll {
-    top: 30% !important;
+    top: 27.5% !important;
     padding: 0 !important;
     margin: 0 !important;
   }
@@ -975,7 +976,7 @@ main #darkMode {
   }
   main .mobileHScroll .horizontalScroller__item .innerText {
     letter-spacing: -2px;
-    font-size: 2vh !important;
+    font-size: 1.8vh !important;
     text-align: justify;
     padding: 0 2%;
   }
