@@ -31,4 +31,4 @@ setTimeout(() => {
 
     WipeElement(".ContactMeSection", 'WipeScroll', 0.7, "ease-in-out", 70);
     WipeElement(".secondContainer", 'WipeScroll', 0.7, "ease", 90);
-}, 0);
+}, 200);
