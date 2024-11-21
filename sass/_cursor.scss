@@ -21,9 +21,22 @@
         pointer-events: none;
         transition: transform 0.3s ease;
 
-        overflow: hidden;
+        // overflow: hidden;
         path{
             fill: rgb(255, 255, 255);
+        }
+
+        #cursorHint{
+            position: absolute;
+            width: 250%;
+            height: 250%;
+
+            top: -75%;
+            left: -75%;
+            animation: Rotate 8s linear infinite;
+
+            opacity: 0;
+            transition: 0.3s ease;
         }
     }
     .Tail{

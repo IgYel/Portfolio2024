@@ -77,6 +77,15 @@
     }
 }
 
+@keyframes Rotate {
+  from{
+    rotate: 0deg;
+  }
+  to{
+    rotate: -360deg;
+  }
+}
+
 @keyframes wipeIn {
   from{
   }

@@ -27,8 +27,6 @@ function MoveText(TextContainerIndex, ScrollerTextIndex){
         const containerRight = TextContainerIndex.getBoundingClientRect().right;  // Абсолютная координата правого края элемента
         const containerWidth = containerRight - containerLeft;  // Рассчитываем ширину элемента
         const cursorXPosition = event.clientX;  // Положение курсора относительно окна
-
-        console.log(cursorXPosition);
         
         TextContainerIndex.onmouseleave = () => {
             const threshold = containerLeft + (containerWidth * 0.6);  // 60% от абсолютной длины элемента
@@ -93,11 +91,27 @@ function ChangeCursor(Element, changeTo) {
     };
 }
 
+const cursorHint = document.querySelector('#cursorHint');
+
 function MakeAButton(classname, changeTo) {
     let elements = document.querySelectorAll(classname);
-    elements.forEach(element => {
-        ChangeCursor(element, changeTo);
-    });
+
+    if(classname === ".horizontalScroller__item"){
+        elements.forEach(element => {
+            element.onmouseover = () => {
+                Cursor.style.transform = `scale(${changeTo})`;
+                cursorHint.style.opacity = "1";
+            };
+            element.onmouseleave = () => {
+                Cursor.style.transform = `scale(1)`;
+                cursorHint.style.opacity = "0";
+            };
+        });
+    } else{
+        elements.forEach(element => {
+            ChangeCursor(element, changeTo);
+        });
+    }
 }
 
 ChangeCursor(EmailContainer, 0.2);
