@@ -21,12 +21,37 @@
         flex-direction: column;
         justify-content: center;
 
-        transition: 0.5s ease-in-out;
       }
       #logoLoader {
         height: 100px;
         width: 100%;
       }
+      .textContainer{
+        width: 100vw;
+
+        display: flex;
+        justify-content: center;
+      }
+      .SVGContainer{
+        width: fit-content;
+        position: relative;
+      }
+
+      #xmasHat{
+        position: absolute;
+        top: -40%;
+        left: 30%;
+
+        width: 85px;
+        height: 85px;
+        object-fit: contain;
+
+        display: none;
+      }
+      #snow{
+        display: none;
+      }
+      
       #loaderText {
         align-content: center;
         text-align: center;
@@ -88,12 +113,17 @@
       #loaderText {
         animation: loaderOpacity 1s 0s ease-in-out forwards;
       }
+      #snow{
+        opacity: 0;
+      }
     </style>
   </head>
 
   <body>
     <section class="loader">
-      <svg
+      <div class="textContainer">
+        <div class="SVGContainer">
+          <svg
         id="logoLoader"
         width="78"
         height="123"
@@ -135,7 +165,11 @@
           stroke-width="1.5"
           class="svg-elem-6"
         ></path>
-      </svg>
+          </svg>
+
+          <img id="xmasHat" src="./icons/xmashat.png" alt="">
+        </div>
+      </div>
 
       <div id="loaderText">&lt;div></div>
     </section>
@@ -1112,9 +1146,67 @@
       </div>
     </div>
 
+    <div id="snow">
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+      <div class="snow"></div>
+    </div>
+
     <!--? LOADER SCRIPT -->
     <script>
       const loader = document.querySelector(".loader");
+      const snow = document.querySelector('#snow');
       const elements = [
         "div",
         "span",
@@ -1137,7 +1229,7 @@
 
       function ShuffleText() {
         if (doShuffle) {
-          const i = Math.floor(Math.random() * elements.length); // случайный индекс
+          const i = Math.floor(Math.random() * elements.length);
           const loaderText = document.querySelector("#loaderText");
           loaderText.textContent = `<${elements[i]}>`;
         }
@@ -1149,8 +1241,12 @@
       }, 200);
 
       window.addEventListener("load", () => {
+
         setTimeout(() =>{
+          loader.style.transition = "0.5s ease-in-out";
           loader.style.opacity = "0";
+          snow.style.opacity = "1";
+
           setTimeout(() => {
             loader.style.display = "none";
           }, 1000);
@@ -1178,5 +1274,7 @@
     <script src="./js/mobileHorizontalScroll.js"></script>
     <script src="./js/starsAbout.js"></script>
     <script type="module" src="./js/wipeIn.js"></script>
+    
+    <script src="./js/xmas.js"></script>
   </body>
 </html>
