@@ -7,7 +7,6 @@ const getCurrentMonth = () => {
     currentMonth = month;
 };
 getCurrentMonth();
-console.log(currnetMonth);
 
 if(currentMonth == 12 || currentMonth == 1){
     snow.style.display = "block";
