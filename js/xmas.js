@@ -8,7 +8,7 @@ const getCurrentMonth = () => {
 };
 getCurrentMonth();
 
-if(currentMonth == 11 || currentMonth == 1){
+if(currentMonth == 12 || currentMonth == 1){
     snow.style.display = "block";
     xmasHat.style.display = "block";
 }
