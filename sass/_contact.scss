@@ -59,6 +59,8 @@
     border-radius: 50vw;
     border: 0.2vw solid;
     .email {
+      cursor: pointer;
+
       min-width: 100%;
       height: 100%;
       text-wrap: nowrap;
@@ -102,6 +104,8 @@
     flex-direction: column;
     justify-content: end;
     .SocialContact {
+      cursor: pointer;
+      
       display: flex;
       padding: 10px 15px;
       justify-content: space-between;
